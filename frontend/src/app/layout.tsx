@@ -1,5 +1,6 @@
-import Header from "@/components/Header";
 import ServiceWorkerRegister from "../components/ServiceWorkerRegister";
+import Header from "@/components/Header";
+import Ad from "@/components/Ad";
 
 export const metadata = {
   title: "포카포미",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <ServiceWorkerRegister />
         <Header />
         <main>{children}</main>
+        <Ad />
       </body>
     </html>
   );
