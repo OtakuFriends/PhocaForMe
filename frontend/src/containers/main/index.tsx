@@ -1,6 +1,6 @@
 import Header from "@/components/Header/index";
 const Main = () => {
-  return <Header />;
+  return <h1>메인페이지</h1>;
 };
 
 export default Main;

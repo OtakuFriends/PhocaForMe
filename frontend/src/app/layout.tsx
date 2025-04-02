@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import ServiceWorkerRegister from "../components/ServiceWorkerRegister";
 
 export const metadata = {
@@ -21,7 +22,8 @@ export default function RootLayout({
       </head>
       <body>
         <ServiceWorkerRegister />
-        {children}
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );
