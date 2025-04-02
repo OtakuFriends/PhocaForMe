@@ -8,5 +8,5 @@ self.addEventListener("activate", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-  console.log("요청 캐싱:", event.request.url);
+  //   console.log("요청 캐싱:", event.request.url);
 });

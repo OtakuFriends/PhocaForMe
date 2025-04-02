@@ -1,3 +1,5 @@
+import Main from "@/app/main/page";
+
 export default function Home() {
-  return <h1>home</h1>;
+  return <Main />;
 }

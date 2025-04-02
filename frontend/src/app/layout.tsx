@@ -1,10 +1,10 @@
-import ServiceWorkerRegister from "./Components/ServiceWorkerRegister";
+import ServiceWorkerRegister from "../components/ServiceWorkerRegister";
 
 export const metadata = {
   title: "포카포미",
   description: "포토카드 교환 전용 플랫폼",
   icons: {
-    icon: "images/icons/favicon.ico",
+    icon: "public/images/icons/favicon.ico",
   },
 };
 
