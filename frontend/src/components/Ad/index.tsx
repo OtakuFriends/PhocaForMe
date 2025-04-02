@@ -1,15 +1,15 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import "./index.css";
+import styles from "./index.module.css";
 
 const Ad = () => {
   const router = useRouter();
   const goToAd = () => {};
 
   return (
-    <div id="container">
-      <div id="ad-area" onClick={goToAd}></div>
+    <div id={styles.container}>
+      <div id={styles.adArea} onClick={goToAd}></div>
     </div>
   );
 };

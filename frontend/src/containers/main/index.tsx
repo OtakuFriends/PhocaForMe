@@ -1,6 +1,16 @@
-import Header from "@/components/Header/index";
+import ChartTab from "./ChartTab";
+import Search from "@/components/Search";
+import styles from "./index.module.css";
+import CardList from "./CardList";
+
 const Main = () => {
-  return <h1>메인페이지</h1>;
+  return (
+    <div id={styles.container}>
+      <Search />
+      <ChartTab />
+      <CardList />
+    </div>
+  );
 };
 
 export default Main;

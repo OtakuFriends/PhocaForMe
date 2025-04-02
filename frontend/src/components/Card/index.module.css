@@ -1,0 +1,42 @@
+#container {
+  border: 1px solid lightgray;
+  width: 30vw;
+  aspect-ratio: 3 / 5;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#imageContainer {
+  position: relative;
+  width: 25vw;
+  aspect-ratio: 3 / 3.5;
+  margin-top: 10px;
+}
+
+#contentContainer {
+  display: flex;
+  flex-direction: column;
+  width: 25vw;
+  row-gap: 5px;
+  padding: 10px;
+}
+
+#titleContainer {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#hr {
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+}
+
+.text {
+  font-size: 12px;
+  color: gray;
+}

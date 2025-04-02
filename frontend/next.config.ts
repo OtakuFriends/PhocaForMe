@@ -11,6 +11,14 @@ const pwaConfig = withPWA({
 
 // ✅ Next.js 설정
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https", // 모든 HTTPS 도메인 허용
+        hostname: "**",
+      },
+    ],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

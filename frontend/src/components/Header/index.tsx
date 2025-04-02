@@ -1,7 +1,7 @@
 "use client";
+import styles from "./index.module.css";
 import { Bell, Hamburger, Logo } from "#/svgs";
 import { useRouter } from "next/navigation";
-import "./index.css";
 
 const Header = () => {
   const router = useRouter();
@@ -14,10 +14,10 @@ const Header = () => {
   };
 
   return (
-    <nav>
-      <Hamburger id="hamburger" onClick={openMenu} />
-      <Logo id="logo" onClick={goToMain} />
-      <Bell id="bell" onClick={goToAlarm} />
+    <nav id={styles.container}>
+      <Hamburger id={styles.hamburger} onClick={openMenu} />
+      <Logo id={styles.logo} onClick={goToMain} />
+      <Bell id={styles.bell} onClick={goToAlarm} />
     </nav>
   );
 };

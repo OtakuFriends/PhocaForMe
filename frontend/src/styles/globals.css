@@ -1,0 +1,10 @@
+:root {
+  --title-large: 24px;
+  --title-medium: 18px;
+  --title-small: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
