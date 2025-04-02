@@ -1,0 +1,21 @@
+{
+  "short_name": "포카포미",
+  "name": "포토카드 교환 전용 플랫폼",
+  "icons": [
+    {
+      "src": "images/icons/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "images/icons/icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
