@@ -1,10 +1,35 @@
 import withPWA from "next-pwa";
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = withPWA({
-  dest: "public", // 서비스 워커와 관련 파일들이 저장될 폴더
-  register: true, // 서비스 워커를 자동으로 등록
-  skipWaiting: true, // 새로운 서비스 워커를 즉시 활성화
+// ✅ PWA 설정
+const pwaConfig = withPWA({
+  dest: "public",
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === "development",
 });
 
-export default nextConfig;
+// ✅ Next.js 설정
+const nextConfig: NextConfig = {
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: "@svgr/webpack",
+          options: {
+            icon: true,
+            svgo: true,
+          },
+        },
+      ],
+    });
+
+    return config;
+  },
+};
+
+// ✅ 변수에 할당 후 내보내기
+const finalConfig = { ...pwaConfig, ...nextConfig };
+
+export default finalConfig;

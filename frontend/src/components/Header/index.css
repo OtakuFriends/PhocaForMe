@@ -1,0 +1,22 @@
+nav {
+  background-color: white;
+  border: black 1px solid;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+}
+
+#logo {
+  width: 100px;
+}
+
+#hamburger {
+  width: 24px;
+}
+
+#bell {
+  width: 24px;
+  height: 24px;
+}
