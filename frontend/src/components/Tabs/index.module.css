@@ -54,7 +54,7 @@
 }
 
 .medal {
-  font-size: 36px;
+  font-size: 32px;
 }
 
 .rank1Image {
@@ -69,8 +69,8 @@
 }
 
 .mainBig {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 /* 2 3위 */
@@ -85,6 +85,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: 14px;
 }
 
 .rank23Image {
