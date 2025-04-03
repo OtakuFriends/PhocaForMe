@@ -2,6 +2,13 @@
   --title-large: 24px;
   --title-medium: 18px;
   --title-small: 15px;
+
+  --color-primary: #fb37a3;
+  --color-secondary: #fd68ba;
+  --color-lightpink: #f9d1e9;
+  --color-purple: #8e60cb;
+  --color-lightgray: #f2f2f2;
+  --color-gray: #697077;
 }
 
 * {

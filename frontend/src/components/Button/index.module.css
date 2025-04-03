@@ -1,0 +1,15 @@
+.container {
+  font-family: var(--font-BMHANNAPro);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-secondary);
+  color: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.large {
+  width: 70%;
+  height: 30px;
+  border-radius: 10px;
+}

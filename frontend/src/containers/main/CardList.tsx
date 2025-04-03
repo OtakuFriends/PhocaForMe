@@ -1,6 +1,9 @@
+"use client";
 import Card from "@/components/Card";
 import styles from "./index.module.css";
 import Title from "@/components/Title";
+import Button from "@/components/Button";
+import { useRouter } from "next/navigation";
 
 const cardDataList = [
   {
@@ -70,6 +73,11 @@ const cardDataList = [
 ];
 
 const CardList = () => {
+  const router = useRouter();
+  const goToCardList = () => {
+    router.push("/cardlist");
+  };
+
   return (
     <div id={styles.cardListContainer}>
       <Title size="large">둘러보기 🔍</Title>
@@ -77,6 +85,9 @@ const CardList = () => {
         {cardDataList.map((card) => (
           <Card key={card.boardId} {...card} />
         ))}
+      </div>
+      <div id={styles.buttonContainer}>
+        <Button size="large" content="+ 더보기" action={goToCardList} />
       </div>
     </div>
   );

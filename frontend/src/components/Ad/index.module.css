@@ -10,6 +10,6 @@
 #adArea {
   width: 95%;
   height: 10vh;
-  background-color: lightgray;
+  background-color: var(--color-lightgray);
   align-items: center;
 }

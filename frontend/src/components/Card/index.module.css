@@ -1,5 +1,5 @@
 #container {
-  border: 1px solid lightgray;
+  border: 1px solid var(--color-lightgray);
   width: 40vw;
   aspect-ratio: 3 / 5;
   border-radius: 10px;
@@ -34,10 +34,10 @@
 
 #hr {
   width: 100%;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid var(--color-gray);
 }
 
 .text {
   font-size: 12px;
-  color: gray;
+  color: var(--color-gray);
 }
