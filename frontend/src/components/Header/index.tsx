@@ -14,6 +14,12 @@ const Header = () => {
   const goToAlarm = () => {
     router.push("/alarm");
   };
+  const goToChatList = () => {
+    router.push("/chatlist");
+  };
+  const goToMyPage = () => {
+    router.push("/mypage");
+  };
 
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -25,6 +31,7 @@ const Header = () => {
       </nav>
 
       {/* 메뉴 오버레이 */}
+
       {isOpen && (
         <div className={styles.overlay} onClick={() => setIsOpen(false)}>
           <Menu>
@@ -32,13 +39,27 @@ const Header = () => {
               icon={<Location />}
               content="직거래 가능 옵션"
               gps={true}
+              action={(
+                event:
+                  | React.TouchEvent<HTMLDivElement>
+                  | React.MouseEvent<HTMLDivElement>
+              ) => event.stopPropagation()}
             />
-            <MenuOption icon={<Chat />} content="나의 채팅함" />
-            <MenuOption icon={<User />} content="마이페이지" />
+            <MenuOption
+              icon={<Chat />}
+              content="나의 채팅함"
+              action={goToChatList}
+            />
+            <MenuOption
+              icon={<User />}
+              content="마이페이지"
+              action={goToMyPage}
+            />
             <MenuOption
               icon={<Logout />}
               content="로그아웃"
               className="logout"
+              action={goToMain}
             />
           </Menu>
         </div>

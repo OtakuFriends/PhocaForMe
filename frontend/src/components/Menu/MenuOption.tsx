@@ -5,11 +5,14 @@ import styles from "./index.module.css";
 interface Props {
   icon: React.ReactNode;
   content: string;
+  action: (
+    event: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>
+  ) => void;
   className?: string;
   gps?: boolean;
 }
 
-const MenuOption = ({ icon, content, className, gps }: Props) => {
+const MenuOption = ({ icon, content, action, className, gps }: Props) => {
   const [isOn, setIsOn] = useState(false);
 
   const handleToggle = (
@@ -21,7 +24,7 @@ const MenuOption = ({ icon, content, className, gps }: Props) => {
 
   if (gps) {
     return (
-      <div className={styles.gpsContainer}>
+      <div className={styles.gpsContainer} onClick={action}>
         <div className={styles.optionTitle}>
           {icon}
           <div className={className ? styles[className] : ""}>{content}</div>
@@ -35,7 +38,7 @@ const MenuOption = ({ icon, content, className, gps }: Props) => {
   }
 
   return (
-    <div className={styles.optionContainer}>
+    <div className={styles.optionContainer} onClick={action}>
       {icon}
       <div className={className ? styles[className] : ""}>{content}</div>
     </div>
