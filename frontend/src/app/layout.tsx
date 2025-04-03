@@ -2,6 +2,7 @@ import ServiceWorkerRegister from "../components/ServiceWorkerRegister";
 import Header from "@/components/Header";
 import Ad from "@/components/Ad";
 import { DOSSaemmul, BMHANNAPro, Freesentation } from "@/styles/fonts";
+import "@/styles/globals.css";
 
 export const metadata = {
   title: "포카포미",
