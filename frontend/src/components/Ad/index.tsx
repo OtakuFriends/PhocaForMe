@@ -5,7 +5,9 @@ import styles from "./index.module.css";
 
 const Ad = () => {
   const router = useRouter();
-  const goToAd = () => {};
+  const goToAd = () => {
+    router.push("www.example.com");
+  };
 
   return (
     <div id={styles.container}>

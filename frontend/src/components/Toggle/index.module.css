@@ -7,7 +7,7 @@
   padding: 1px 3px;
   display: flex;
   align-items: center;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .circle {
@@ -26,10 +26,10 @@
 
 .container {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .off {
   background-color: var(--color-gray);
-  justify-content: end;
+  justify-content: flex-end;
 }

@@ -21,9 +21,11 @@ interface Card {
   ownId: number;
 }
 
-const Card = ({ title, content, imageSrc, findId, ownId }: Card) => {
+const Card = ({ boardId, title, imageSrc, findId, ownId }: Card) => {
   const router = useRouter();
-  const goToDetail = () => {};
+  const goToDetail = () => {
+    router.push("/carddetail/" + boardId);
+  };
 
   return (
     <div id={styles.container} onClick={goToDetail}>
