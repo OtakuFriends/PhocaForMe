@@ -11,6 +11,10 @@
   --color-gray: #697077;
 }
 
+main {
+  padding: 8vh 0;
+}
+
 * {
   margin: 0;
   padding: 0;
