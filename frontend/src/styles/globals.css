@@ -7,4 +7,6 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: var(--font-Freesentation);
+  font-weight: 500;
 }

@@ -1,6 +1,7 @@
 import ServiceWorkerRegister from "../components/ServiceWorkerRegister";
 import Header from "@/components/Header";
 import Ad from "@/components/Ad";
+import { DOSSaemmul, BMHANNAPro, Freesentation } from "@/styles/fonts";
 
 export const metadata = {
   title: "포카포미",
@@ -17,7 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html
+      lang="ko"
+      className={`${DOSSaemmul.variable} ${BMHANNAPro.variable} ${Freesentation.variable}`}
+    >
       <head>
         <link rel="manifest" href="/manifest.json" />
       </head>

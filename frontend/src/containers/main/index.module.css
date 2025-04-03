@@ -3,3 +3,17 @@
   flex-direction: column;
   padding: 5%;
 }
+
+#cardContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 10px 0px;
+}
+
+#cardListContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}

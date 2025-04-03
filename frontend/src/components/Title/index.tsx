@@ -10,7 +10,17 @@ export default function Title({
   id?: string;
 }) {
   return (
-    <div style={{ fontSize: `var(--title-${size})` }} {...(id ? { id } : {})}>
+    <div
+      style={{
+        ...(size === "large"
+          ? {
+              fontFamily: `var(--font-BMHANNAPro)`,
+              fontSize: `var(--title-${size})`,
+            }
+          : { fontSize: `var(--title-${size})` }),
+      }}
+      {...(id ? { id } : {})}
+    >
       {children}
     </div>
   );
