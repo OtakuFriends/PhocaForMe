@@ -1,0 +1,35 @@
+.toggleContainer {
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: 50px;
+  height: 20px;
+  width: 40px;
+  padding: 1px 3px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.circle {
+  cursor: pointer;
+  border: none;
+  border-radius: 100%;
+  height: 90%;
+  width: fit-content;
+  aspect-ratio: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  justify-content: start;
+}
+
+.off {
+  background-color: var(--color-gray);
+  justify-content: end;
+}

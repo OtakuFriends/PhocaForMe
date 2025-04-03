@@ -1,4 +1,4 @@
-#container {
+#navContainer {
   background-color: white;
   height: 8vh;
   width: calc(90% - 2px);
@@ -22,4 +22,20 @@
 #bell {
   width: 24px;
   height: 24px;
+}
+
+.overlay {
+  position: fixed;
+  top: 8vh;
+  left: 0;
+  width: 90%;
+  margin-left: 5%;
+  padding: 10px 0;
+  border: 1px solid var(--color-mediumgray);
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
 }

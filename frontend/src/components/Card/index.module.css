@@ -1,6 +1,6 @@
 #container {
   border: 1px solid var(--color-lightgray);
-  width: 40vw;
+  width: 35vw;
   aspect-ratio: 3 / 5;
   border-radius: 10px;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
@@ -20,7 +20,7 @@
 #contentContainer {
   display: flex;
   flex-direction: column;
-  width: 85%;
+  width: 80%;
   row-gap: 5px;
   padding: 10px 0px;
 }
@@ -34,7 +34,7 @@
 
 #hr {
   width: 100%;
-  border-bottom: 1px solid var(--color-gray);
+  border-bottom: 1px solid var(--color-lightgray);
 }
 
 .text {
