@@ -1,5 +1,6 @@
 import withPWA from "next-pwa";
 import type { NextConfig } from "next";
+// import { heroui } from "@heroui/react";
 
 // ✅ PWA 설정
 const pwaConfig = withPWA({

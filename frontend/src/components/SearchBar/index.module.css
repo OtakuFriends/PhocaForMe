@@ -1,0 +1,29 @@
+.container {
+  /* border: 1px solid var(--color-gray); */
+  width: calc(100% - 14px);
+  height: fit-content;
+  border-radius: 5px;
+  padding: 7px;
+  background-color: var(--color-lightgray);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  width: 90%;
+  margin: 0 3%;
+}
+
+#searchInput::placeholder {
+  color: var(--color-gray);
+  font-size: 12px;
+}
+
+#formContainer {
+  width: 100%;
+}

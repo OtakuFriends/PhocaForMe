@@ -1,5 +1,5 @@
 import ChartTab from "./ChartTab";
-import Search from "@/components/Search";
+import Search from "./Search";
 import styles from "./index.module.css";
 import CardList from "./CardList";
 
