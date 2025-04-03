@@ -1,0 +1,98 @@
+.tabsContainer {
+  width: 100%;
+}
+
+.tabLabels {
+  display: flex;
+  border-bottom: 2px solid var(--color-lightgray);
+}
+
+.tabButton {
+  padding: 10px 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: var(--color-gray);
+}
+
+.tabButton.active {
+  color: var(--color-primary);
+  font-weight: 700;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.tabContent {
+  padding: 20px;
+}
+
+/* 차트 css */
+.chartAlign {
+  text-align: center;
+}
+
+.noContent {
+  color: var(--color-gray);
+}
+
+.chartContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 1위 */
+.rank1Idol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rank1Emoji {
+  display: flex;
+  align-items: start;
+}
+
+.medal {
+  font-size: 36px;
+}
+
+.rank1Image {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+.rank1Title {
+  margin-top: 8px;
+  text-align: center;
+}
+
+.mainBig {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* 2 3위 */
+.rank23Idol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.rankItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rank23Image {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.image {
+  border-radius: 100%;
+}
