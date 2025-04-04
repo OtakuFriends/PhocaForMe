@@ -4,7 +4,9 @@ import { useRouter } from "next/navigation";
 import Button from "@/components/Button";
 import Modal from "@/components/Modal";
 import Image from "next/image";
-import { Kanban } from "#/svgs";
+import { Kanban, Pencil, Trash } from "#/svgs";
+import MenuOption from "@/components/Menu/MenuOption";
+import Menu from "@/components/Menu";
 
 interface Props {
   cardId: number;
@@ -31,13 +33,14 @@ const CardDetail = ({ cardId }: Props) => {
   const user = 1;
   const [post, setPost] = useState<Post>();
   const [loading, setLoading] = useState<boolean>(true);
-  const [open, setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false); // 이미지 전체보기
+  const [isOpen, setIsOpen] = useState(false); // 작성자 메뉴
   const [imageSrc, setImageSrc] = useState<string>("");
   // const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
     setPost({
-      title: "원영이 포카 데려가세요",
+      title: "원영이 포카 데려가세요 너무 예뻐요 진짜 초미녀임",
       content:
         "This card uses an object. This card uses an object. This card uses an object. This card uses an object. This card uses an object. ",
       boardId: 1,
@@ -71,6 +74,15 @@ const CardDetail = ({ cardId }: Props) => {
     router.push("/chatroom/1");
   };
 
+  const goToModify = () => {
+    router.push("/modify");
+  };
+
+  const deletePost = () => {
+    // 삭제 후 뒤로 가기
+    router.back();
+  };
+
   if (loading) return <div>로딩중</div>;
 
   if (!post)
@@ -83,8 +95,29 @@ const CardDetail = ({ cardId }: Props) => {
       </div>
       <div className={styles.titleContainer}>
         <div className={styles.title}>{post.title}</div>
-        {user == post.userId ? <Kanban /> : null}
+        <div onClick={() => setIsOpen(!isOpen)}>
+          {user == post.userId ? <Kanban /> : null}
+        </div>
       </div>
+
+      {isOpen && (
+        <div className={styles.menuOverlay} onClick={() => setIsOpen(false)}>
+          <Menu>
+            <MenuOption
+              icon={<Pencil />}
+              content="게시글 수정"
+              action={goToModify}
+            />
+            <MenuOption
+              icon={<Trash />}
+              content="게시글 삭제"
+              className="pink"
+              action={deletePost}
+            />
+          </Menu>
+        </div>
+      )}
+
       <div id={styles.hr} />
       <div className={styles.subtitle}>
         <div className={styles.writer}>{`작성자 ✦ ${post.userId}`}</div>

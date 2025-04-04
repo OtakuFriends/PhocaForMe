@@ -58,7 +58,7 @@ const Header = () => {
             <MenuOption
               icon={<Logout />}
               content="로그아웃"
-              className="logout"
+              className="pink"
               action={goToMain}
             />
           </Menu>

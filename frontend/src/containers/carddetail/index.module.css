@@ -6,6 +6,20 @@
   row-gap: 10px;
 }
 
+.menuOverlay {
+  z-index: 10;
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 20vh);
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
 .overlay {
   z-index: 10;
   position: absolute;
@@ -117,7 +131,8 @@
 }
 
 .title {
-  font-size: large;
+  font-size: 22px;
+  margin-right: 10px;
 }
 
 .imageList {
