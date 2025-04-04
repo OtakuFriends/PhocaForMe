@@ -7,6 +7,7 @@ import Logout from "./logout.svg";
 import User from "./user.svg";
 import Chat from "./chat.svg";
 import Location from "./location.svg";
+import Kanban from "./kanban.svg";
 
 export {
   Hamburger,
@@ -18,4 +19,5 @@ export {
   User,
   Chat,
   Location,
+  Kanban,
 };
