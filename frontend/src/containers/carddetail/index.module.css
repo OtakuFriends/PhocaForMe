@@ -1,8 +1,8 @@
 .card {
   display: flex;
   flex-direction: column;
-  width: 90%;
-  padding-left: 5%;
+  width: 86vw;
+  padding-left: 7vw;
   row-gap: 10px;
 }
 

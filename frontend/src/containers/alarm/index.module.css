@@ -1,0 +1,18 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  padding: 5% 7%;
+}
+
+.checkbox {
+  border: 1px solid black;
+  width: 20px;
+  aspect-ratio: 1;
+}
+
+.checkContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 10px;
+}

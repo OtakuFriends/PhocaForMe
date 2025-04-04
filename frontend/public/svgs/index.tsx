@@ -10,6 +10,9 @@ import Location from "./location.svg";
 import Kanban from "./kanban.svg";
 import Pencil from "./pencil.svg";
 import Trash from "./trash.svg";
+import Check from "./check.svg";
+import Circle from "./circle.svg";
+import Close from "./close.svg";
 
 export {
   Hamburger,
@@ -24,4 +27,7 @@ export {
   Kanban,
   Pencil,
   Trash,
+  Check,
+  Circle,
+  Close,
 };
