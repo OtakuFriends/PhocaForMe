@@ -3,6 +3,7 @@ import Title from "@/components/Title";
 import styles from "./index.module.css";
 import { useEffect, useState } from "react";
 import List from "@/components/List";
+import { Check } from "#/svgs";
 
 interface Alarm {
   id: number;
@@ -15,8 +16,10 @@ interface Alarm {
   type: "Chatting" | "Article";
   articleId: number;
 }
+
 const Alarm = () => {
   const [list, setList] = useState<Alarm[]>([]);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
   useEffect(() => {
     setList([
       {
@@ -44,13 +47,20 @@ const Alarm = () => {
     ]);
   }, []);
 
+  const handleCheck = () => {
+    setList((prevList) =>
+      prevList.map((alarm) => ({ ...alarm, readStatus: true }))
+    );
+    setIsChecked(true);
+  };
+
   return (
     <div id={styles.container}>
       <div>
         <Title size="large">알림 목록</Title>
-        <div className={styles.checkContainer}>
-          <div className={styles.checkbox}></div>
-          <div>모두 읽음</div>
+        <div className={styles.checkContainer} onClick={handleCheck}>
+          <div className={styles.checkbox}>{isChecked ? <Check /> : null}</div>
+          <div>모두 읽음으로 변경</div>
         </div>
       </div>
       <List alarmlist={list} />

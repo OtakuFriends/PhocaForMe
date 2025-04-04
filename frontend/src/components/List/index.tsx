@@ -1,6 +1,4 @@
-"use client";
-import styles from "./index.module.css";
-import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 import Item from "./Item";
 
 interface Alarm {
@@ -20,26 +18,34 @@ interface Props {
 }
 
 const List = ({ alarmlist }: Props) => {
-  const router = useRouter();
-  const goToDetail = (articleId: number) => {
-    router.push("/carddetail/" + articleId);
-  };
-  const goToChat = () => {
-    router.push("/chatlist");
+  const [list, setList] = useState<Alarm[]>(alarmlist);
+
+  useEffect(() => {
+    setList(alarmlist); // 초기 데이터 설정
+  }, [alarmlist]);
+
+  const deleteAlarm = (id: number) => {
+    setList((prevList) => prevList.filter((alarm) => alarm.id !== id));
   };
 
+  useEffect(() => {
+    return () => {
+      // 컴포넌트 언마운트될 때 삭제된 알람들 실제로 삭제
+      console.log("실제 api 호출");
+    };
+  }, []);
+
   return (
-    <div id={styles.container}>
-      {alarmlist.map((alarm: Alarm) => (
-        <div
-          key={alarm.id}
-          onClick={() =>
-            alarm.type === "Chatting" ? goToChat() : goToDetail(alarm.articleId)
-          }
-        >
-          <Item {...alarm} />
+    <div>
+      {list.length == 0 ? (
+        <div>알림없음</div>
+      ) : (
+        <div>
+          {list.map((alarm) => (
+            <Item key={alarm.id} {...alarm} deleteAlarm={deleteAlarm} />
+          ))}
         </div>
-      ))}
+      )}
     </div>
   );
 };

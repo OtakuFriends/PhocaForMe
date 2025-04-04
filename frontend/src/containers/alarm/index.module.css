@@ -2,17 +2,22 @@
   display: flex;
   flex-direction: column;
   padding: 5% 7%;
+  row-gap: 10px;
 }
 
 .checkbox {
   border: 1px solid black;
-  width: 20px;
-  aspect-ratio: 1;
+  width: 10px;
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .checkContainer {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  column-gap: 10px;
+  column-gap: 5px;
+  font-size: small;
 }

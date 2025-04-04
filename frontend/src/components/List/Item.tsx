@@ -14,29 +14,48 @@ interface Alarm {
   articleId: number;
 }
 
-const Item = (item: Alarm) => {
+interface Props extends Alarm {
+  deleteAlarm: (id: number) => void;
+}
+
+const Item = ({
+  id,
+  userId,
+  readStatus,
+  type,
+  createdAt,
+  deleteAlarm,
+}: Props) => {
   return (
     <div
       className={`${styles.itemContainer} ${
-        item.readStatus ? styles.read : styles.unread
+        readStatus ? styles.read : styles.unread
       }`}
     >
       <div className={styles.left}>
-        {!item.readStatus ? <Circle /> : <Check />}
+        {!readStatus ? <Circle /> : <Check />}
         <div className={styles.content}>
           <div className={styles.title}>
-            {item.type === "Chatting" ? "채팅알림" : "갈망포카"}
+            {type === "Chatting" ? "채팅알림" : "갈망포카"}
           </div>
           <div className={styles.subtitle}>
-            {item.type === "Chatting"
-              ? `${item.userId} 님이 채팅을 보냈습니다.`
+            {type === "Chatting"
+              ? `${userId} 님이 채팅을 보냈습니다.`
               : "지금 당신의 갈망포카가 올라왔어요!"}
           </div>
         </div>
       </div>
       <div className={styles.right}>
-        <div>{item.createdAt?.toLocaleDateString()}</div>
-        <Close />
+        <div>{createdAt?.toLocaleDateString()}</div>
+        <div
+          className={styles.close}
+          onClick={(e) => {
+            e.stopPropagation();
+            deleteAlarm(id);
+          }}
+        >
+          <Close />
+        </div>
       </div>
     </div>
   );

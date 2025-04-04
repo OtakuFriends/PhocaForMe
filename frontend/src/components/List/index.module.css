@@ -36,3 +36,8 @@
 .subtitle {
   font-size: small;
 }
+
+.close {
+  display: flex;
+  align-items: center;
+}
