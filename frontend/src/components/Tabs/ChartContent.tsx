@@ -25,6 +25,7 @@ const ChartContent = ({ rankData }: ChartContentProps) => {
                 className={styles.image}
                 alt="1위"
                 fill
+                sizes="80vw"
                 style={{ objectFit: "cover" }}
                 src={rankData[0].idolImage}
               />
@@ -45,6 +46,7 @@ const ChartContent = ({ rankData }: ChartContentProps) => {
                   alt={`${rank}위`}
                   fill
                   style={{ objectFit: "cover" }}
+                  sizes="80vw"
                   src={rankData[rank - 1]?.idolImage}
                 />
               </div>

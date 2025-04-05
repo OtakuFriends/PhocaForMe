@@ -54,9 +54,9 @@ const CardDetail = ({ cardId }: Props) => {
       findId: [50, 51],
       ownId: 40,
       imageSrc: [
-        "https://img.notionusercontent.com/s3/prod-files-secure%2F32b54871-9d93-4376-bc12-b11af2bce837%2Fbae78b39-136f-41a7-80fa-4ddee244e9fd%2F%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC.jpeg/size/w=2000?exp=1743690284&sig=CVfFR1xfExZhP05odRvg2ecic-ghppnXUD7V4HUUUV8&id=1c9c9b3d-a83e-8056-8366-fa5c37756cd5&table=block&userId=af2ebfd7-89f6-4fda-a2ff-b66365d8510b",
-        "https://img.notionusercontent.com/s3/prod-files-secure%2F32b54871-9d93-4376-bc12-b11af2bce837%2Fbae78b39-136f-41a7-80fa-4ddee244e9fd%2F%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC.jpeg/size/w=2000?exp=1743690284&sig=CVfFR1xfExZhP05odRvg2ecic-ghppnXUD7V4HUUUV8&id=1c9c9b3d-a83e-8056-8366-fa5c37756cd5&table=block&userId=af2ebfd7-89f6-4fda-a2ff-b66365d8510b",
-        "https://img.notionusercontent.com/s3/prod-files-secure%2F32b54871-9d93-4376-bc12-b11af2bce837%2Fbae78b39-136f-41a7-80fa-4ddee244e9fd%2F%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC.jpeg/size/w=2000?exp=1743690284&sig=CVfFR1xfExZhP05odRvg2ecic-ghppnXUD7V4HUUUV8&id=1c9c9b3d-a83e-8056-8366-fa5c37756cd5&table=block&userId=af2ebfd7-89f6-4fda-a2ff-b66365d8510b",
+        "https://blogog.notion.site/image/attachment%3Abae78b39-136f-41a7-80fa-4ddee244e9fd%3A%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC.jpeg?table=block&id=1c9c9b3d-a83e-8056-8366-fa5c37756cd5&spaceId=32b54871-9d93-4376-bc12-b11af2bce837&width=1240&userId=&cache=v2",
+        "https://blogog.notion.site/image/attachment%3Abae78b39-136f-41a7-80fa-4ddee244e9fd%3A%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC.jpeg?table=block&id=1c9c9b3d-a83e-8056-8366-fa5c37756cd5&spaceId=32b54871-9d93-4376-bc12-b11af2bce837&width=1240&userId=&cache=v2",
+        "https://blogog.notion.site/image/attachment%3Abae78b39-136f-41a7-80fa-4ddee244e9fd%3A%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC.jpeg?table=block&id=1c9c9b3d-a83e-8056-8366-fa5c37756cd5&spaceId=32b54871-9d93-4376-bc12-b11af2bce837&width=1240&userId=&cache=v2",
         "https://gdimg.gmarket.co.kr/4324438323/still/280?ver=1739965506",
       ],
     });
@@ -130,11 +130,12 @@ const CardDetail = ({ cardId }: Props) => {
             <Image
               alt="포토카드 이미지"
               onClick={() => handleClickOpen(image)}
-              layout="fill"
-              objectFit="cover"
+              fill
+              style={{ objectFit: "cover" }}
+              sizes="80vw"
               src={image}
-              loading="lazy"
               className={styles.image}
+              priority={true}
             />
           </div>
         ))}

@@ -31,8 +31,9 @@ const Card = ({ boardId, title, imageSrc, findId, ownId }: Card) => {
     <div id={styles.container} onClick={goToDetail}>
       <div id={styles.imageContainer}>
         <Image
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
+          sizes="80vw"
           alt="photocard"
           src={imageSrc}
         ></Image>
