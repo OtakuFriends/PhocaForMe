@@ -2,7 +2,7 @@
 import Title from "@/components/Title";
 import styles from "./index.module.css";
 import { useEffect, useState } from "react";
-import List from "@/components/List";
+import List from "@/components/AlarmList";
 import { Check } from "#/svgs";
 
 interface Alarm {
