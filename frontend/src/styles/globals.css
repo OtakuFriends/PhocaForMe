@@ -16,6 +16,12 @@ main {
   padding: 8vh 0;
 }
 
+/* 확대방지 */
+html,
+body {
+  touch-action: manipulation;
+}
+
 * {
   margin: 0;
   padding: 0;

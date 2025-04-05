@@ -1,0 +1,64 @@
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: calc(100vw - 14%);
+  padding: 0 7%;
+  height: 81vh;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  height: fit-content;
+  row-gap: 10px;
+  background-color: white;
+}
+
+.message {
+  width: 100%;
+  background-color: pink;
+}
+
+.topTitle {
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.topSubtitle {
+  font-size: large;
+}
+
+.kanban {
+  text-align: end;
+}
+
+.topContainer {
+  display: grid;
+  grid-template-columns: 1fr 0.2fr;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topTitleContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  max-width: 10vw;
+  aspect-ratio: 1;
+}
+
+.image {
+  border-radius: 100%;
+}
+
+#hr {
+  width: 100%;
+  border-bottom: 1px solid var(--color-primary);
+}
