@@ -96,6 +96,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .overlay {
@@ -110,4 +111,8 @@
   align-items: end;
   padding-bottom: 20px;
   z-index: 100;
+}
+
+.fileInput {
+  display: none;
 }
