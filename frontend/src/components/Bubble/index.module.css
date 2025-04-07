@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.meContainer {
+  justify-content: flex-end;
+}
+
+.youContainer {
+  justify-content: flex-start;
+}
+
+.date {
+  font-size: small;
+  color: var(--color-gray);
+  padding-bottom: 10px;
+}
+
+.textContainer {
+  width: fit-content;
+  padding: 8px;
+  border-radius: 10px;
+  white-space: pre-line;
+}
+
+.me {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.you {
+  background-color: var(--color-lightgray);
+}

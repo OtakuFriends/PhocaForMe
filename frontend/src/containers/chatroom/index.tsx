@@ -88,7 +88,7 @@ const ChatRoom = ({ roomId }: Props) => {
   return (
     <div className={styles.container}>
       <ChatTop info={topInfo} loginUser={loginUser} />
-      <ChatMessage roomId={roomId} />
+      <ChatMessage roomId={roomId} loginUser={loginUser} />
       <ChatSend />
     </div>
   );

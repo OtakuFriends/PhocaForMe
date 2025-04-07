@@ -5,7 +5,6 @@ import styles from "./index.module.css";
 
 const ChatSend = () => {
   const [message, setMessage] = useState<string>("");
-  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setMessage(event.target.value);
