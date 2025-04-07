@@ -14,6 +14,7 @@ import Check from "./check.svg";
 import Circle from "./circle.svg";
 import Close from "./close.svg";
 import Pin from "./pin.svg";
+import Plus from "./plus.svg";
 
 export {
   Hamburger,
@@ -32,4 +33,5 @@ export {
   Circle,
   Close,
   Pin,
+  Plus,
 };

@@ -46,3 +46,7 @@
 .pink {
   color: var(--color-primary);
 }
+
+.gray {
+  color: var(--color-gray);
+}

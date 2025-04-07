@@ -1,8 +1,31 @@
 "use client";
 import styles from "./index.module.css";
 import { Pin } from "#/svgs";
+import { useEffect, useRef, useState } from "react";
 
-const ChatMessage = () => {
+interface Props {
+  roomId: number;
+}
+
+interface Chat {
+  id: number;
+}
+
+const ChatMessage = ({ roomId }: Props) => {
+  const [chatting, setChatting] = useState<Chat[]>([]);
+  const sendMessageBoxRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    console.log(roomId + " 방의 채팅내역 가져오기...");
+    setChatting([]);
+  }, [roomId]);
+
+  useEffect(() => {
+    if (sendMessageBoxRef.current) {
+      window.scrollTo({ top: sendMessageBoxRef.current.scrollHeight });
+    }
+  }, [chatting]);
+
   return (
     <div className={styles.message}>
       <div className={styles.noticeBox}>

@@ -5,7 +5,7 @@ interface ChatRoom {
   boardId: number;
   boardtitle: string;
   ownerId: string;
-  visiterId: string;
+  visitorId: string;
   latestChat: number;
   ownerLatestChat: number;
   visitorLatestChat: number;

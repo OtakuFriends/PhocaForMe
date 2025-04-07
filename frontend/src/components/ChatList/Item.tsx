@@ -8,7 +8,7 @@ interface ChatRoom {
   boardId: number;
   boardtitle: string;
   ownerId: string;
-  visiterId: string;
+  visitorId: string;
   latestChat: number;
   ownerLatestChat: number;
   visitorLatestChat: number;
@@ -19,7 +19,7 @@ interface ChatRoom {
 
 const Item = ({
   id,
-  visiterId,
+  visitorId,
   latestChat,
   createdAt,
   readStatus,
@@ -49,7 +49,7 @@ const Item = ({
       </div>
       <div className={styles.contentContainer}>
         <div className={styles.top}>
-          <div className={styles.title}>{visiterId}</div>
+          <div className={styles.title}>{visitorId}</div>
           <div className={styles.date}>{createdAt?.toLocaleDateString()}</div>
         </div>
         <div className={styles.bottom}>

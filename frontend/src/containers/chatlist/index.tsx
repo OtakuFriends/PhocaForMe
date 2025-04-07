@@ -9,7 +9,7 @@ interface ChatRoom {
   boardId: number;
   boardtitle: string;
   ownerId: string;
-  visiterId: string;
+  visitorId: string;
   latestChat: number;
   ownerLatestChat: number;
   visitorLatestChat: number;
@@ -28,7 +28,7 @@ const ChatList = () => {
         boardId: 1,
         boardtitle: "도영 포토카드 마크로 구해요",
         ownerId: "1",
-        visiterId: "방문자2",
+        visitorId: "방문자2",
         latestChat: 1,
         ownerLatestChat: 0,
         visitorLatestChat: 1,
@@ -41,7 +41,7 @@ const ChatList = () => {
         boardId: 1,
         boardtitle: "도영 포토카드 마크로 구해요",
         ownerId: "1",
-        visiterId: "방문자3",
+        visitorId: "방문자3",
         latestChat: 2,
         ownerLatestChat: 3,
         visitorLatestChat: 2,

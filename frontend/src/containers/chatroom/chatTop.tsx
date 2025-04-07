@@ -1,21 +1,39 @@
 "use client";
-import { Kanban } from "#/svgs";
+import { Check, Kanban, Trash } from "#/svgs";
 import Image from "next/image";
 import styles from "./index.module.css";
+import { useState } from "react";
+import Menu from "@/components/Menu";
+import MenuOption from "@/components/Menu/MenuOption";
+import { useRouter } from "next/navigation";
 
 type ChatInfo = {
   id: number;
   boardId: number;
   boardtitle: string;
   ownerId: string;
-  visiterId: string;
+  visitorId: string;
 };
 
 interface Props {
   info?: ChatInfo;
+  loginUser: string;
 }
 
-const ChatTop = ({ info }: Props) => {
+const ChatTop = ({ info, loginUser }: Props) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const router = useRouter();
+
+  const handleOut = () => {
+    // 채팅방 삭제 처리
+    router.push("/chatlist");
+  };
+
+  const handleDone = () => {
+    // 게시글 완료 처리
+    router.push("/chatlist");
+  };
+
   return (
     <div className={styles.top}>
       <div className={styles.topContainer}>
@@ -32,14 +50,37 @@ const ChatTop = ({ info }: Props) => {
               }
             />
           </div>
-          <div className={styles.topTitle}>{info?.visiterId}</div>
+          <div className={styles.topTitle}>{info?.visitorId}</div>
         </div>
-        <div className={styles.kanban}>
+        <div className={styles.kanban} onClick={() => setIsOpen(!isOpen)}>
           <Kanban />
         </div>
       </div>
       <div className={styles.topSubtitle}>{info?.boardtitle}</div>
       <div id={styles.hr}></div>
+
+      {/* 메뉴 오버레이 */}
+      {isOpen && (
+        <div className={styles.overlay} onClick={() => setIsOpen(false)}>
+          <Menu>
+            {loginUser == info?.ownerId ? (
+              <MenuOption
+                icon={<Check />}
+                content="교환완료"
+                className="gray"
+                action={handleDone}
+              />
+            ) : null}
+
+            <MenuOption
+              icon={<Trash />}
+              content="채팅방 나가기"
+              className="pink"
+              action={handleOut}
+            />
+          </Menu>
+        </div>
+      )}
     </div>
   );
 };
