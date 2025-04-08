@@ -10,8 +10,6 @@ interface Props {
 }
 
 const Text = ({ type, value, setValue }: Props) => {
-  // const [content, setContent] = useState<string>("");
-
   const handleInput = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {

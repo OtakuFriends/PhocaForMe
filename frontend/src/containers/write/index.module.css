@@ -54,14 +54,10 @@
   font-size: 12px;
 }
 
-/* single */
-.selectbox {
-  margin-top: 10px;
-}
-
-/* double */
-.selectbox {
-  margin-top: 10px;
+/* 셀렉트박스 */
+.memberContainer {
+  flex: 1;
+  min-width: 0;
 }
 
 .chipContainer {

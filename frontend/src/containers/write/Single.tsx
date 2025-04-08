@@ -2,27 +2,21 @@
 import Title from "@/components/Title";
 import styles from "./index.module.css";
 
-import dynamic from "next/dynamic";
 import { Option } from "@/types";
-import { SingleValue } from "react-select";
+import SelectBox from "@/components/Select";
 
 interface Props {
   title: string;
   options: Option[];
-  value: SingleValue<Option>;
-  setValue: (v: SingleValue<Option>) => void;
+  value: Option | null;
+  setValue: (v: Option | null) => void;
 }
 
 const Single = ({ title, options, value, setValue }: Props) => {
-  // const [selectedOption, setSelectedOption] = useState<Option | null>(null);
-
-  const handleSelect = (option: SingleValue<Option>) => {
+  const handleSelect = (option: Option | null) => {
+    console.log(option);
     setValue(option);
   };
-
-  const SelectBox = dynamic(() => import("@/components/Select"), {
-    ssr: false,
-  });
 
   return (
     <div id={styles.single}>
