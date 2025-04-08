@@ -1,11 +1,7 @@
 "use client";
 import "@/styles/globals.css";
+import { Option } from "@/types";
 import Select from "react-select";
-
-interface Option {
-  value: string;
-  label: string;
-}
 
 interface Props {
   options: Option[];

@@ -42,3 +42,19 @@ export interface TopInfo {
   ownerId: string;
   visitorId: string;
 }
+
+export interface Card {
+  boardId: number;
+  title: string;
+  content: string;
+  cardType: string;
+  status: number;
+  bartered: number;
+  groupId: number;
+  createdDate: Date;
+  lastModifiedDate: Date;
+  userId: number;
+  imageSrc: string;
+  findId: number;
+  ownId: number;
+}

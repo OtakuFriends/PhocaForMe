@@ -4,6 +4,7 @@ import styles from "./index.module.css";
 import { Option } from "@/types";
 import { useState } from "react";
 import dynamic from "next/dynamic";
+import Chip from "@/components/Chip";
 
 interface Props {
   title: string[];
@@ -16,14 +17,28 @@ const Double = ({ title, options }: Props) => {
   });
 
   const [val1, setVal1] = useState<Option | null>(null);
+  const [valList1, setValList1] = useState<Option[]>([]);
   const [val2, setVal2] = useState<Option | null>(null);
+  const [valList2, setValList2] = useState<Option[]>([]);
 
   const handleSelect1 = (option: Option | null) => {
     setVal1(option);
+    if (option) {
+      setValList1((prev) => {
+        const exists = prev.some((val) => val.value === option.value);
+        return exists ? prev : [...prev, option];
+      });
+    }
   };
 
   const handleSelect2 = (option: Option | null) => {
     setVal2(option);
+    if (option) {
+      setValList2((prev) => {
+        const exists = prev.some((val) => val.value === option.value);
+        return exists ? prev : [...prev, option];
+      });
+    }
   };
 
   return (
@@ -35,6 +50,19 @@ const Double = ({ title, options }: Props) => {
         <div className={styles.selectbox}>
           <SelectBox options={options} onChange={handleSelect1} value={val1} />
         </div>
+        <div className={styles.chipContainer}>
+          {valList1.map((val) => (
+            <Chip
+              key={val.value}
+              text={val.label}
+              handleDelete={() =>
+                setValList1((prev) =>
+                  prev.filter((item) => item.value !== val.value)
+                )
+              }
+            />
+          ))}
+        </div>
       </div>
       <div>
         <Title size="medium" id={styles.title}>
@@ -42,6 +70,19 @@ const Double = ({ title, options }: Props) => {
         </Title>
         <div className={styles.selectbox}>
           <SelectBox options={options} onChange={handleSelect2} value={val2} />
+        </div>
+        <div className={styles.chipContainer}>
+          {valList2.map((val) => (
+            <Chip
+              key={val.value}
+              text={val.label}
+              handleDelete={() =>
+                setValList2((prev) =>
+                  prev.filter((item) => item.value !== val.value)
+                )
+              }
+            />
+          ))}
         </div>
       </div>
     </div>

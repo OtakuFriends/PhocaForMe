@@ -14,7 +14,7 @@ interface Props {
 const Single = ({ title, options }: Props) => {
   const [selectedOption, setSelectedOption] = useState<Option | null>(null);
 
-  const handleSelect = (option: Option | null) => {
+  const handleSelect = (option: Option) => {
     setSelectedOption(option);
   };
 
