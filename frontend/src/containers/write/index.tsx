@@ -9,12 +9,25 @@ import Double from "./Double";
 import { useEffect, useState } from "react";
 import Button from "@/components/Button";
 import { useRouter } from "next/navigation";
-import { Option } from "@/types";
+import { Option, Post } from "@/types";
 
 const Write = () => {
+  // 셀렉트 박스에 들어갈 옵션 리스트
   const [groupOption, setGroupOption] = useState<Option[]>([]);
   const [cardOption, setCardOption] = useState<Option[]>([]);
   const [memberOption, setMemberOption] = useState<Option[]>([]);
+
+  // post data
+  const [post, setPost] = useState<Post>({
+    title: "",
+    content: "",
+    selectedGroup: null,
+    cardType: null,
+    ownMembers: [],
+    targetMembers: [],
+    images: [],
+  });
+
   const router = useRouter();
 
   useEffect(() => {
@@ -47,6 +60,7 @@ const Write = () => {
         label: "엑소",
       },
     ]);
+
     // 그룹 선택에 따라 멤버 옵션 달라져야 함
     setMemberOption([
       { value: "1", label: "태연" },
@@ -56,18 +70,48 @@ const Write = () => {
   }, []);
 
   const handleSubmit = () => {
-    console.log("제출");
+    console.log("데이터:", post);
   };
 
   return (
     <div id={styles.container}>
       <Title size="large">게시글 작성하기</Title>
-      <Photo />
-      <Text type="title" />
-      <Single title="그룹명" options={groupOption} />
-      <Double title={["보유한 멤버", "찾는 멤버"]} options={memberOption} />
-      <Single title="포토카드 종류" options={cardOption} />
-      <Text type="content" />
+      <Photo
+        images={post.images}
+        setImages={(val) => setPost((prev) => ({ ...prev, images: val }))}
+      />
+      <Text
+        type="title"
+        value={post.title}
+        setValue={(val) => setPost((prev) => ({ ...prev, title: val }))}
+      />
+      <Single
+        title="그룹명"
+        options={groupOption}
+        value={post.selectedGroup}
+        setValue={(val) => setPost((prev) => ({ ...prev, selectedGroup: val }))}
+      />
+      <Double
+        title={["보유한 멤버", "찾는 멤버"]}
+        options={memberOption}
+        own={post.ownMembers}
+        target={post.targetMembers}
+        setOwn={(val) => setPost((prev) => ({ ...prev, ownMembers: val }))}
+        setTarget={(val) =>
+          setPost((prev) => ({ ...prev, targetMembers: val }))
+        }
+      />
+      <Single
+        title="포토카드 종류"
+        options={cardOption}
+        value={post.cardType}
+        setValue={(val) => setPost((prev) => ({ ...prev, cardType: val }))}
+      />
+      <Text
+        type="content"
+        value={post.content}
+        setValue={(val) => setPost((prev) => ({ ...prev, content: val }))}
+      />
       <div className={styles.buttonContainer}>
         <Button size="large" content="게시글 등록" action={handleSubmit} />
         <Button

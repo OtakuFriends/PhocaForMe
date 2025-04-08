@@ -58,3 +58,13 @@ export interface Card {
   findId: number;
   ownId: number;
 }
+
+export interface Post {
+  title: string;
+  content: string;
+  selectedGroup: Option | null;
+  cardType: Option | null;
+  ownMembers: Option[];
+  targetMembers: Option[];
+  images: string[];
+}

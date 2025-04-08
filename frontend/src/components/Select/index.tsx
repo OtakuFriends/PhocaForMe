@@ -1,11 +1,11 @@
 "use client";
 import "@/styles/globals.css";
 import { Option } from "@/types";
-import Select from "react-select";
+import Select, { SingleValue } from "react-select";
 
 interface Props {
   options: Option[];
-  onChange: (option: Option | null) => void;
+  onChange: (option: SingleValue<Option>) => void;
   value: Option | null;
 }
 

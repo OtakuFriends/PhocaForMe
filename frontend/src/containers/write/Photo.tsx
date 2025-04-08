@@ -1,12 +1,15 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Plus } from "#/svgs";
 import styles from "./index.module.css";
 import Image from "next/image";
 
-const Photo = () => {
-  const [images, setImages] = useState<string[]>([]);
+interface Props {
+  images: string[];
+  setImages: (v: string[]) => void;
+}
+const Photo = ({ images, setImages }: Props) => {
   const previewRef = useRef<HTMLDivElement>(null);
 
   const handleFile = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -14,7 +17,7 @@ const Photo = () => {
     if (files) {
       const fileArray = Array.from(files);
       const newImageUrls = fileArray.map((file) => URL.createObjectURL(file));
-      setImages((prev) => [...prev, ...newImageUrls]);
+      setImages([...images, ...newImageUrls]);
     }
   };
 
@@ -25,9 +28,7 @@ const Photo = () => {
   }, [images]);
 
   const handleDelete = (indexToRemove: number) => {
-    setImages((prevImages) =>
-      prevImages.filter((_, index) => index !== indexToRemove)
-    );
+    setImages(images.filter((_, idx) => idx !== indexToRemove));
   };
 
   return (

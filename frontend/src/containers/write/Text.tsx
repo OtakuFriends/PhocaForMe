@@ -2,19 +2,20 @@
 
 import Title from "@/components/Title";
 import styles from "./index.module.css";
-import { useState } from "react";
 
 interface Props {
   type: "title" | "content";
+  value: string;
+  setValue: (v: string) => void;
 }
 
-const Text = ({ type }: Props) => {
-  const [content, setContent] = useState<string>("");
+const Text = ({ type, value, setValue }: Props) => {
+  // const [content, setContent] = useState<string>("");
 
   const handleInput = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setContent(event.target.value);
+    setValue(event.target.value);
   };
 
   return (
@@ -33,14 +34,14 @@ const Text = ({ type }: Props) => {
             id={styles.textInput}
             placeholder="키워드를 넣어 작성하세요 (앨범명, 버전명 등)"
             type="text"
-            value={content}
+            value={value}
             onChange={handleInput}
           ></input>
         ) : (
           <textarea
             id={styles.textInput}
             placeholder="포토카드 상태에 대한 세부 내용을 적어주세요."
-            value={content}
+            value={value}
             onChange={handleInput}
           ></textarea>
         )}
