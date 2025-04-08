@@ -28,3 +28,9 @@ body {
   font-family: var(--font-Freesentation);
   font-weight: 500;
 }
+
+/* 셀렉트 라이브러리 커스텀 */
+.selectBox__placeholder {
+  font-size: small;
+  color: gray;
+}

@@ -32,7 +32,6 @@
 
 .titleContainer {
   background-color: var(--color-lightgray);
-  border-radius: 10px;
 }
 
 #textInput {
@@ -46,4 +45,9 @@
 #textInput::placeholder {
   color: var(--color-gray);
   font-size: 12px;
+}
+
+/* single */
+.selectbox {
+  margin-top: 10px;
 }
