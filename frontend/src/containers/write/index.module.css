@@ -13,6 +13,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
 }
 
 /* text */
@@ -50,4 +51,18 @@
 /* single */
 .selectbox {
   margin-top: 10px;
+}
+
+/* double */
+.selectbox {
+  margin-top: 10px;
+}
+
+/* 버튼 */
+.buttonContainer {
+  display: flex;
+  width: 80%;
+  padding-left: 10%;
+  justify-content: center;
+  column-gap: 10px;
 }

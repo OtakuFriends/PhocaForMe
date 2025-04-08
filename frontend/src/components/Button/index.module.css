@@ -13,3 +13,7 @@
   height: 30px;
   border-radius: 10px;
 }
+
+.purple {
+  background-color: var(--color-purple);
+}
