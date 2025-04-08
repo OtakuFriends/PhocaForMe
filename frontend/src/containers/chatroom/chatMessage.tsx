@@ -3,20 +3,11 @@ import styles from "./index.module.css";
 import { Pin } from "#/svgs";
 import { useEffect, useRef, useState } from "react";
 import Bubble from "@/components/Bubble";
+import { Chat } from "@/types";
 
 interface Props {
   roomId: number;
   loginUser: string;
-}
-
-interface Chat {
-  id: number;
-  roomId: number;
-  message: string;
-  isRead: boolean;
-  createdAt: Date;
-  senderId: string;
-  imgCode: string;
 }
 
 const ChatMessage = ({ roomId, loginUser }: Props) => {

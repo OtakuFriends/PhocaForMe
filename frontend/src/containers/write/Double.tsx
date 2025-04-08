@@ -9,6 +9,7 @@ interface Props {
   title: string[];
   options: Option[];
 }
+
 const Double = ({ title, options }: Props) => {
   const SelectBox = dynamic(() => import("@/components/Select"), {
     ssr: false,

@@ -4,11 +4,7 @@ import styles from "./index.module.css";
 
 import { useState } from "react";
 import dynamic from "next/dynamic";
-
-interface Option {
-  value: string;
-  label: string;
-}
+import { Option } from "@/types";
 
 interface Props {
   title: string;

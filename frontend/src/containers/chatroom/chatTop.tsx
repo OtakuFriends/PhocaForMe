@@ -6,14 +6,7 @@ import { useState } from "react";
 import Menu from "@/components/Menu";
 import MenuOption from "@/components/Menu/MenuOption";
 import { useRouter } from "next/navigation";
-
-type ChatInfo = {
-  id: number;
-  boardId: number;
-  boardtitle: string;
-  ownerId: string;
-  visitorId: string;
-};
+import { ChatInfo } from "@/types";
 
 interface Props {
   info?: ChatInfo;

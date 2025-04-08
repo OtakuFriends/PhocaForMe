@@ -9,11 +9,7 @@ import Double from "./Double";
 import { useEffect, useState } from "react";
 import Button from "@/components/Button";
 import { useRouter } from "next/navigation";
-
-interface Option {
-  value: string;
-  label: string;
-}
+import { Option } from "@/types";
 
 const Write = () => {
   const [groupOption, setGroupOption] = useState<Option[]>([]);
@@ -56,13 +52,6 @@ const Write = () => {
       { value: "1", label: "태연" },
       { value: "2", label: "티파니" },
       { value: "3", label: "써니" },
-      // { value: "4", label: "종현" },
-      // { value: "5", label: "키" },
-      // { value: "6", label: "태민" },
-      // { value: "7", label: "민호" },
-      // { value: "8", label: "시우민" },
-      // { value: "9", label: "수호" },
-      // { value: "10", label: "디오" },
     ]);
   }, []);
 

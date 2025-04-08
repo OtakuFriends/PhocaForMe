@@ -7,35 +7,14 @@ import { useEffect, useState } from "react";
 import ChatTop from "./chatTop";
 import ChatSend from "./chatSend";
 import ChatMessage from "./chatMessage";
-
-interface ChatRoom {
-  id: number;
-  boardId: number;
-  boardtitle: string;
-  ownerId: string;
-  visitorId: string;
-  latestChat: number;
-  ownerLatestChat: number;
-  visitorLatestChat: number;
-  createdAt: Date;
-  readStatus: boolean;
-  isDelete: boolean;
-}
-
-interface TopInfo {
-  id: number;
-  boardId: number;
-  boardtitle: string;
-  ownerId: string;
-  visitorId: string;
-}
+import { ChatRoomType, TopInfo } from "@/types";
 
 interface Props {
   roomId: number;
 }
 
 const ChatRoom = ({ roomId }: Props) => {
-  const [chatroom, setChatroom] = useState<ChatRoom>();
+  const [chatroom, setChatroom] = useState<ChatRoomType>();
   const [topInfo, setTopInfo] = useState<TopInfo>();
   // const [loading, setLoading] = useState(false);
 
