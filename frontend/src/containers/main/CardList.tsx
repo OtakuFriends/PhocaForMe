@@ -87,7 +87,12 @@ const CardList = () => {
         ))}
       </div>
       <div id={styles.buttonContainer}>
-        <Button size="large" content="+ 더보기" action={goToCardList} />
+        <Button
+          className="expand"
+          size="large"
+          content="+ 더보기"
+          action={goToCardList}
+        />
       </div>
     </div>
   );

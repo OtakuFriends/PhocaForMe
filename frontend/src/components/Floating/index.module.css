@@ -1,0 +1,15 @@
+.container {
+  background-color: var(--color-primary);
+  color: white;
+  position: fixed;
+  bottom: 10vh;
+  margin-bottom: 10px;
+  right: 5vw;
+  width: 15vw;
+  aspect-ratio: 1;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}

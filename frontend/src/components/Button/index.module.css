@@ -17,3 +17,8 @@
 .purple {
   background-color: var(--color-purple);
 }
+
+.expand {
+  background-color: var(--color-mediumgray);
+  color: black;
+}
