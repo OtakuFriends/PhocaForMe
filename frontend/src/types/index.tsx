@@ -60,11 +60,20 @@ export interface Card {
 }
 
 export interface Post {
+  id: number;
   title: string;
   content: string;
-  selectedGroup: Option | null;
   cardType: Option | null;
+  selectedGroup: Option | null;
   ownMembers: Option[];
   targetMembers: Option[];
   images: string[];
+}
+
+export interface Board extends Post {
+  userId: number;
+  lastModifiedDate: Date;
+  createdDate: Date;
+  bartered: boolean;
+  status: number;
 }

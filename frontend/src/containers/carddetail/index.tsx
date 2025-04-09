@@ -7,31 +7,17 @@ import Image from "next/image";
 import { Kanban, Pencil, Trash } from "#/svgs";
 import MenuOption from "@/components/Menu/MenuOption";
 import Menu from "@/components/Menu";
+import { usePostStore } from "@/store/usePostStore";
+import { Board } from "@/types";
 
 interface Props {
   cardId: number;
 }
 
-interface Post {
-  title: string;
-  content: string;
-  boardId: number;
-  cardType: string;
-  status: number;
-  bartered: boolean;
-  groupId: number;
-  createdDate: Date;
-  lastModifiedDate: Date;
-  userId: number;
-  findId: number[];
-  ownId: number;
-  imageSrc: string[];
-}
-
 const CardDetail = ({ cardId }: Props) => {
   const router = useRouter();
   const user = 1;
-  const [post, setPost] = useState<Post>();
+  const [post, setPost] = useState<Board | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [open, setOpen] = useState<boolean>(false); // 이미지 전체보기
   const [isOpen, setIsOpen] = useState(false); // 작성자 메뉴
@@ -43,17 +29,17 @@ const CardDetail = ({ cardId }: Props) => {
       title: "원영이 포카 데려가세요 너무 예뻐요 진짜 초미녀임",
       content:
         "This card uses an object. This card uses an object. This card uses an object. This card uses an object. This card uses an object. ",
-      boardId: 1,
-      cardType: "앨범포카",
+      id: 1,
+      cardType: { label: "앨범포카", value: "앨범포카" },
       status: 0,
       bartered: false,
-      groupId: 10,
+      selectedGroup: { label: "소녀시대", value: "1" },
       createdDate: new Date(),
       lastModifiedDate: new Date(),
       userId: 1,
-      findId: [50, 51],
-      ownId: 40,
-      imageSrc: [
+      targetMembers: [{ label: "태연", value: "1" }],
+      ownMembers: [{ label: "티파니", value: "2" }],
+      images: [
         "https://blogog.notion.site/image/attachment%3Abae78b39-136f-41a7-80fa-4ddee244e9fd%3A%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC.jpeg?table=block&id=1c9c9b3d-a83e-8056-8366-fa5c37756cd5&spaceId=32b54871-9d93-4376-bc12-b11af2bce837&width=1240&userId=&cache=v2",
         "https://blogog.notion.site/image/attachment%3Abae78b39-136f-41a7-80fa-4ddee244e9fd%3A%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC.jpeg?table=block&id=1c9c9b3d-a83e-8056-8366-fa5c37756cd5&spaceId=32b54871-9d93-4376-bc12-b11af2bce837&width=1240&userId=&cache=v2",
         "https://blogog.notion.site/image/attachment%3Abae78b39-136f-41a7-80fa-4ddee244e9fd%3A%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%8B%E1%85%A7%E1%86%BC.jpeg?table=block&id=1c9c9b3d-a83e-8056-8366-fa5c37756cd5&spaceId=32b54871-9d93-4376-bc12-b11af2bce837&width=1240&userId=&cache=v2",
@@ -74,7 +60,11 @@ const CardDetail = ({ cardId }: Props) => {
     router.push("/chatroom/1");
   };
 
+  const setPostStore = usePostStore((state) => state.setPost);
   const goToModify = () => {
+    if (post) {
+      setPostStore(post);
+    }
     router.push("/modify");
   };
 
@@ -121,11 +111,11 @@ const CardDetail = ({ cardId }: Props) => {
       <div id={styles.hr} />
       <div className={styles.subtitle}>
         <div className={styles.writer}>{`작성자 ✦ ${post.userId}`}</div>
-        <div className={styles.cardType}>{post.cardType}</div>
+        <div className={styles.cardType}>{post.cardType?.label}</div>
       </div>
 
       <div className={styles.imageList}>
-        {post.imageSrc.map((image, index) => (
+        {post.images.map((image, index) => (
           <div key={index} className={styles.imageLayout}>
             <Image
               alt="포토카드 이미지"
@@ -152,7 +142,11 @@ const CardDetail = ({ cardId }: Props) => {
       </Modal>
 
       <div className={styles.writer}>
-        {`있어요: ${post.ownId} ✦ 구해요: ${post.findId.join(", ")}`}
+        {`있어요: ${post.ownMembers
+          .map((member) => member.label)
+          .join(", ")} ✦ 구해요: ${post.targetMembers
+          .map((member) => member.label)
+          .join(", ")}`}
       </div>
 
       <div id={styles.hr} />

@@ -19,6 +19,7 @@ const Write = () => {
 
   // post data
   const [post, setPost] = useState<Post>({
+    id: 0,
     title: "",
     content: "",
     selectedGroup: null,
