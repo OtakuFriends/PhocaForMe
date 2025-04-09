@@ -32,6 +32,8 @@ const Write = () => {
   const router = useRouter();
 
   useEffect(() => {
+    // to do
+    // 옵션 제대로 넣기
     setCardOption([
       {
         value: "앨범포카",

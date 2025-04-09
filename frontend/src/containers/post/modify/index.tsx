@@ -72,7 +72,9 @@ const Modify = () => {
   }, []);
 
   const handleSubmit = () => {
-    console.log("데이터:", post);
+    console.log("수정된 데이터:", post);
+    // todo
+    // 데이터 업데이트
     clearPost();
     router.push(`/carddetail/${post?.id}`);
   };
