@@ -9,14 +9,12 @@ import Double from "../Double";
 import { useEffect, useState } from "react";
 import Button from "@/components/Button";
 import { useRouter } from "next/navigation";
-import { Option, Post } from "@/types";
+import { Post } from "@/types";
+import { groupOption } from "@/constants/groupOption";
+import { memberOption } from "@/constants/memberOption";
+import { cardOptions } from "@/constants/cardOption";
 
 const Write = () => {
-  // 셀렉트 박스에 들어갈 옵션 리스트
-  const [groupOption, setGroupOption] = useState<Option[]>([]);
-  const [cardOption, setCardOption] = useState<Option[]>([]);
-  const [memberOption, setMemberOption] = useState<Option[]>([]);
-
   // post data
   const [post, setPost] = useState<Post>({
     id: 0,
@@ -33,43 +31,7 @@ const Write = () => {
 
   useEffect(() => {
     // to do
-    // 옵션 제대로 넣기
-    setCardOption([
-      {
-        value: "앨범포카",
-        label: "앨범포카",
-      },
-      {
-        value: "미공포",
-        label: "미공포",
-      },
-      {
-        value: "기타",
-        label: "기타",
-      },
-    ]);
-
-    setGroupOption([
-      {
-        value: "1",
-        label: "소녀시대",
-      },
-      {
-        value: "2",
-        label: "샤이니",
-      },
-      {
-        value: "3",
-        label: "엑소",
-      },
-    ]);
-
     // 그룹 선택에 따라 멤버 옵션 달라져야 함
-    setMemberOption([
-      { value: "1", label: "태연" },
-      { value: "2", label: "티파니" },
-      { value: "3", label: "써니" },
-    ]);
   }, []);
 
   const handleSubmit = () => {
@@ -106,7 +68,7 @@ const Write = () => {
       />
       <Single
         title="포토카드 종류"
-        options={cardOption}
+        options={cardOptions}
         value={post.cardType}
         setValue={(val) => setPost((prev) => ({ ...prev, cardType: val }))}
       />

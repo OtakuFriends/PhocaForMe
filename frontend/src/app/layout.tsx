@@ -1,8 +1,8 @@
 import ServiceWorkerRegister from "../components/ServiceWorkerRegister";
-import Header from "@/components/Header";
-import Ad from "@/components/Ad";
 import { DOSSaemmul, BMHANNAPro, Freesentation } from "@/styles/fonts";
 import "@/styles/globals.css";
+import Ad from "@/components/Ad";
+import Header from "@/components/Header";
 import Floating from "@/components/Floating";
 
 export const metadata = {
