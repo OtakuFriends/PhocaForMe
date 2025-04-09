@@ -1,11 +1,11 @@
 "use client";
 
 import Title from "@/components/Title";
-import styles from "./index.module.css";
-import Photo from "./Photo";
-import Text from "./Text";
-import Single from "./Single";
-import Double from "./Double";
+import styles from "../index.module.css";
+import Photo from "../Photo";
+import Text from "../Text";
+import Single from "../Single";
+import Double from "../Double";
 import { useEffect, useState } from "react";
 import Button from "@/components/Button";
 import { useRouter } from "next/navigation";

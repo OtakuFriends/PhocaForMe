@@ -1,1 +1,1 @@
-export { default } from "@/containers/write";
+export { default } from "@/containers/post/write";
