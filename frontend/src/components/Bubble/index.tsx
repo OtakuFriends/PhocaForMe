@@ -23,7 +23,7 @@ const Bubble = ({ chat, loginUser }: Props) => {
     if (chat.senderId == loginUser) {
       setIsMe(true);
     }
-  }, []);
+  }, [loginUser, chat]);
 
   return (
     <div
