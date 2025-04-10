@@ -64,10 +64,9 @@ const Modify = () => {
       // todo
       // 게시글 수정 api
       console.log("수정된 데이터:", post);
+      clearPost();
+      router.push(`/carddetail/${post?.id}`);
     }
-
-    clearPost();
-    router.push(`/carddetail/${post?.id}`);
   };
 
   if (!post) {

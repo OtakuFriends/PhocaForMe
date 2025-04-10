@@ -138,7 +138,7 @@
 .imageList {
   width: 100%;
   display: flex;
-  overflow-x: auto; /* 스크롤을 자동으로 */
+  overflow-x: auto;
   scroll-behavior: smooth;
   padding-bottom: 8px; /* 스크롤바와 겹치지 않게 */
 }
