@@ -159,7 +159,7 @@ const Modify = () => {
           <Alert
             text="필수항목을 모두 작성해주세요."
             buttons={["확인"]}
-            handleClose={() => setOpen(false)}
+            handleClose={[() => setOpen(false)]}
           />
         </Modal>
       ) : null}

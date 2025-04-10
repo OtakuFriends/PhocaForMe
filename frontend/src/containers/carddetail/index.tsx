@@ -9,6 +9,7 @@ import MenuOption from "@/components/Menu/MenuOption";
 import Menu from "@/components/Menu";
 import { usePostStore } from "@/store/usePostStore";
 import { Board } from "@/types";
+import Alert from "@/components/Modal/Alert";
 
 interface Props {
   cardId: number;
@@ -20,6 +21,7 @@ const CardDetail = ({ cardId }: Props) => {
   const [post, setPost] = useState<Board | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [open, setOpen] = useState<boolean>(false); // 이미지 전체보기
+  const [deleteModal, setDeleteModal] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState(false); // 작성자 메뉴
   const [imageSrc, setImageSrc] = useState<string>("");
 
@@ -67,9 +69,11 @@ const CardDetail = ({ cardId }: Props) => {
     router.push("/modify");
   };
 
-  const deletePost = () => {
-    // 삭제 후 뒤로 가기
-    router.back();
+  const handleDelete = () => {
+    // to do
+    // 게시글 삭제 api
+    console.log("게시글 삭제");
+    router.push("/cardlist");
   };
 
   if (loading) return <div>로딩중</div>;
@@ -101,12 +105,26 @@ const CardDetail = ({ cardId }: Props) => {
               icon={<Trash />}
               content="게시글 삭제"
               className="pink"
-              action={deletePost}
+              action={() => setDeleteModal(true)}
             />
           </Menu>
         </div>
       )}
-
+      {deleteModal ? (
+        <Modal open={deleteModal} handleClose={() => setDeleteModal(false)}>
+          <Alert
+            text="현재 게시물을 삭제하시겠습니까?"
+            buttons={["삭제", "취소"]}
+            handleClose={[
+              () => {
+                handleDelete();
+                setDeleteModal(false);
+              },
+              () => setDeleteModal(false),
+            ]}
+          />
+        </Modal>
+      ) : null}
       <div id={styles.hr} />
       <div className={styles.subtitle}>
         <div className={styles.writer}>{`작성자 ✦ ${post.userId}`}</div>

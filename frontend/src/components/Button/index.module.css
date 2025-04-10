@@ -18,6 +18,10 @@
   background-color: var(--color-purple);
 }
 
+.gray {
+  background-color: var(--color-gray);
+}
+
 .expand {
   background-color: var(--color-mediumgray);
   color: black;

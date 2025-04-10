@@ -33,9 +33,10 @@
 }
 
 .buttonContainer {
-  width: 100%;
+  width: 60%;
   display: flex;
   justify-content: center;
+  gap: 5px;
 }
 
 .alertText {
