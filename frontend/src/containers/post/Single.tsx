@@ -9,10 +9,11 @@ interface Props {
   title: string;
   options: Option[];
   value: Option | null;
+  error: boolean;
   setValue: (v: Option | null) => void;
 }
 
-const Single = ({ title, options, value, setValue }: Props) => {
+const Single = ({ title, options, value, error, setValue }: Props) => {
   const handleSelect = (option: Option | null) => {
     console.log(option);
     setValue(option);
@@ -23,7 +24,7 @@ const Single = ({ title, options, value, setValue }: Props) => {
       <Title size="medium" id={styles.title}>
         {title}
       </Title>
-      <div className={styles.selectbox}>
+      <div className={`styles.selectbox ${error ? styles.errorContainer : ""}`}>
         <SelectBox options={options} value={value} onChange={handleSelect} />
       </div>
     </div>

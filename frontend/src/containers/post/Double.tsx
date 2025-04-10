@@ -11,11 +11,20 @@ interface Props {
   options: Option[];
   own: Option[];
   target: Option[];
+  error: boolean[];
   setOwn: (v: Option[]) => void;
   setTarget: (v: Option[]) => void;
 }
 
-const Double = ({ title, options, own, target, setOwn, setTarget }: Props) => {
+const Double = ({
+  title,
+  options,
+  own,
+  target,
+  error,
+  setOwn,
+  setTarget,
+}: Props) => {
   const [val1, setVal1] = useState<Option | null>(null);
   const [val2, setVal2] = useState<Option | null>(null);
 
@@ -45,7 +54,9 @@ const Double = ({ title, options, own, target, setOwn, setTarget }: Props) => {
         <Title size="medium" id={styles.title}>
           {title[0]}
         </Title>
-        <SelectBox options={options} onChange={handleSelect1} value={val1} />
+        <div className={`${error[0] ? styles.errorContainer : ""}`}>
+          <SelectBox options={options} onChange={handleSelect1} value={val1} />
+        </div>
         <div className={styles.chipContainer}>
           {own.map((val) => (
             <Chip
@@ -62,7 +73,9 @@ const Double = ({ title, options, own, target, setOwn, setTarget }: Props) => {
         <Title size="medium" id={styles.title}>
           {title[1]}
         </Title>
-        <SelectBox options={options} onChange={handleSelect2} value={val2} />
+        <div className={`${error[1] ? styles.errorContainer : ""}`}>
+          <SelectBox options={options} onChange={handleSelect2} value={val2} />
+        </div>
         <div className={styles.chipContainer}>
           {target.map((val) => (
             <Chip

@@ -70,6 +70,15 @@ export interface Post {
   images: string[];
 }
 
+export interface PostError {
+  title: boolean;
+  content: boolean;
+  selectedGroup: boolean;
+  cardType: boolean;
+  ownMembers: boolean;
+  targetMembers: boolean;
+}
+
 export interface Board extends Post {
   userId: number;
   lastModifiedDate: Date;

@@ -6,10 +6,11 @@ import styles from "./index.module.css";
 interface Props {
   type: "title" | "content";
   value: string;
+  error: boolean;
   setValue: (v: string) => void;
 }
 
-const Text = ({ type, value, setValue }: Props) => {
+const Text = ({ type, value, error, setValue }: Props) => {
   const handleInput = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -24,12 +25,12 @@ const Text = ({ type, value, setValue }: Props) => {
       <div
         className={`${
           type === "title" ? styles.titleContainer : styles.contentContainer
-        }`}
+        } ${error ? styles.errorContainer : ""}`}
         id={styles.inputContainer}
       >
         {type === "title" ? (
           <input
-            id={styles.textInput}
+            id={styles.input}
             placeholder="키워드를 넣어 작성하세요 (앨범명, 버전명 등)"
             type="text"
             value={value}
@@ -37,7 +38,7 @@ const Text = ({ type, value, setValue }: Props) => {
           ></input>
         ) : (
           <textarea
-            id={styles.textInput}
+            id={styles.textarea}
             placeholder="포토카드 상태에 대한 세부 내용을 적어주세요."
             value={value}
             onChange={handleInput}

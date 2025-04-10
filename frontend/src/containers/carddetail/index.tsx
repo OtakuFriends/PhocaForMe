@@ -22,7 +22,6 @@ const CardDetail = ({ cardId }: Props) => {
   const [open, setOpen] = useState<boolean>(false); // 이미지 전체보기
   const [isOpen, setIsOpen] = useState(false); // 작성자 메뉴
   const [imageSrc, setImageSrc] = useState<string>("");
-  // const [modalOpen, setModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
     setPost({
@@ -171,10 +170,6 @@ const CardDetail = ({ cardId }: Props) => {
           </div>
         </div>
       )}
-      {/* <NeedLogin
-        handleModalClose={() => setModalOpen(false)}
-        modalOpen={modalOpen}
-      /> */}
     </div>
   );
 };
