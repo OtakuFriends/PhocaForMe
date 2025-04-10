@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 5% 7%;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  gap: 10px 0px;
+  padding-bottom: 20px;
+}

@@ -18,11 +18,13 @@ const ChatTop = ({ info, loginUser }: Props) => {
   const router = useRouter();
 
   const handleOut = () => {
+    // to do
     // 채팅방 삭제 처리
     router.push("/chatlist");
   };
 
   const handleDone = () => {
+    // to do
     // 게시글 완료 처리
     router.push("/chatlist");
   };

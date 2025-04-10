@@ -33,7 +33,7 @@ const CardDetail = ({ cardId }: Props) => {
       id: 1,
       cardType: { label: "앨범포카", value: "앨범포카" },
       status: 0,
-      bartered: false,
+      bartered: true,
       selectedGroup: { label: "소녀시대", value: "1" },
       createdDate: new Date(),
       lastModifiedDate: new Date(),

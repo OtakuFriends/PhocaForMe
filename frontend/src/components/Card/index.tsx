@@ -21,14 +21,18 @@ interface Card {
   ownId: number;
 }
 
-const Card = ({ boardId, title, imageSrc, findId, ownId }: Card) => {
+const Card = ({ boardId, title, imageSrc, findId, ownId, bartered }: Card) => {
   const router = useRouter();
   const goToDetail = () => {
     router.push("/carddetail/" + boardId);
   };
 
   return (
-    <div id={styles.container} onClick={goToDetail}>
+    <div
+      className={`${styles.container} ${bartered ? styles.bartered : null}`}
+      onClick={goToDetail}
+    >
+      {bartered ? <div className={styles.barteredText}>교환완료</div> : null}
       <div id={styles.imageContainer}>
         <Image
           fill
