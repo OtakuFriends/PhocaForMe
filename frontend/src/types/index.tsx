@@ -86,3 +86,11 @@ export interface Board extends Post {
   bartered: boolean;
   status: number;
 }
+
+export interface SearchParam {
+  keyword?: string;
+  group?: string;
+  own?: string[];
+  target?: string[];
+  cardType?: string;
+}

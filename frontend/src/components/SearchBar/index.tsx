@@ -2,8 +2,10 @@
 import { Dropdown, Search } from "#/svgs";
 import { useState } from "react";
 import styles from "./index.module.css";
+import { useRouter } from "next/navigation";
 
 const SearchBar = () => {
+  const router = useRouter();
   const [query, setQuery] = useState<string>("");
 
   const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,6 +21,9 @@ const SearchBar = () => {
 
   const handleSearch = () => {
     console.log("검색 실행:", query);
+    // to do
+    // 쿼리 url 형식으로 수정하기
+    router.push("/cardlist");
   };
 
   return (

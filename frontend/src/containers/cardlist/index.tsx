@@ -3,13 +3,20 @@ import styles from "./index.module.css";
 import Search from "../main/Search";
 import Card from "@/components/Card";
 import { useEffect, useState } from "react";
+import { SearchParam } from "@/types";
 
-const CardList = () => {
+interface Props {
+  query?: SearchParam;
+}
+
+const CardList = ({ query }: Props) => {
+  console.log(query);
+  const isFiltered = !!query;
   const [cardData, setCardData] = useState<Card[]>([]);
 
   useEffect(() => {
     // to do
-    // 카드 리스트 가져오기
+    // isFiltered 및 검색 쿼리에 따른 카드 리스트 가져오기
     setCardData([
       {
         title: "원영이 포카 데려가세요",
@@ -81,6 +88,13 @@ const CardList = () => {
   return (
     <div className={styles.container}>
       <Search />
+      <div>
+        {isFiltered ? (
+          <p className={styles.filterText}>⋆⁺ 검색 결과 ₊⋆</p>
+        ) : (
+          <p className={styles.filterText}>⋆⁺ 전체 매물 보기 ₊⋆</p>
+        )}
+      </div>
       <div className={styles.cardContainer}>
         {cardData.map((card) => (
           <Card key={card.boardId} {...card} />
