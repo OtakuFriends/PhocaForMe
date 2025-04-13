@@ -9,7 +9,7 @@ interface Props {
   title: string;
   options: Option[];
   value: Option | null;
-  error: boolean;
+  error?: boolean;
   setValue: (v: Option | null) => void;
 }
 

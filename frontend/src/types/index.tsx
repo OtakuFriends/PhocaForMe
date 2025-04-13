@@ -87,10 +87,18 @@ export interface Board extends Post {
   status: number;
 }
 
+export interface SearchOption {
+  keyword: string;
+  group: Option | null;
+  own: Option[];
+  target: Option[];
+  cardType: Option | null;
+}
+
 export interface SearchParam {
-  keyword?: string;
-  group?: string;
-  own?: string[];
-  target?: string[];
-  cardType?: string;
+  keyword: string;
+  group: string;
+  own: string[];
+  target: string[];
+  cardType: string;
 }

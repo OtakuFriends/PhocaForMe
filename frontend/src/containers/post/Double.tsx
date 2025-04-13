@@ -11,7 +11,7 @@ interface Props {
   options: Option[];
   own: Option[];
   target: Option[];
-  error: boolean[];
+  error?: boolean[];
   setOwn: (v: Option[]) => void;
   setTarget: (v: Option[]) => void;
 }
@@ -54,7 +54,7 @@ const Double = ({
         <Title size="medium" id={styles.title}>
           {title[0]}
         </Title>
-        <div className={`${error[0] ? styles.errorContainer : ""}`}>
+        <div className={`${error && error[0] ? styles.errorContainer : ""}`}>
           <SelectBox options={options} onChange={handleSelect1} value={val1} />
         </div>
         <div className={styles.chipContainer}>
@@ -73,7 +73,7 @@ const Double = ({
         <Title size="medium" id={styles.title}>
           {title[1]}
         </Title>
-        <div className={`${error[1] ? styles.errorContainer : ""}`}>
+        <div className={`${error && error[1] ? styles.errorContainer : ""}`}>
           <SelectBox options={options} onChange={handleSelect2} value={val2} />
         </div>
         <div className={styles.chipContainer}>
