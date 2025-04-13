@@ -10,7 +10,6 @@ interface Props {
 }
 
 const CardList = ({ query }: Props) => {
-  console.log(query);
   const isFiltered = !!query;
   const [cardData, setCardData] = useState<Card[]>([]);
 
