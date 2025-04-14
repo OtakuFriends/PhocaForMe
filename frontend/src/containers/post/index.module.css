@@ -10,13 +10,6 @@
   margin-bottom: 10px;
 }
 
-#double {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 10px;
-}
-
 #photo {
   display: flex;
   flex-direction: column;
@@ -65,19 +58,6 @@
 #textarea::placeholder {
   color: var(--color-gray);
   font-size: 12px;
-}
-
-/* 셀렉트박스 */
-.memberContainer {
-  flex: 1;
-  min-width: 0;
-}
-
-.chipContainer {
-  margin-top: 5px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
 }
 
 /* 버튼 */

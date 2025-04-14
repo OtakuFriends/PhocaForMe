@@ -58,3 +58,35 @@
   padding: 10px;
   color: var(--color-gray);
 }
+
+/* 셀렉트박스 */
+.memberContainer {
+  flex: 1;
+  min-width: 0;
+}
+
+.chipContainer {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+#double {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+
+#title {
+  font-family: var(--font-BMHANNAPro);
+  margin-bottom: 10px;
+}
+
+/* 빈값 처리 */
+.errorContainer {
+  border: 1px solid var(--color-primary);
+  height: fit-content;
+  border-radius: 5px;
+}
