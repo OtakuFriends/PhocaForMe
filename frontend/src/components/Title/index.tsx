@@ -12,7 +12,7 @@ export default function Title({
   return (
     <div
       style={{
-        ...(size === "large"
+        ...(size === "large" || size === "medium"
           ? {
               fontFamily: `var(--font-BMHANNAPro)`,
               fontSize: `var(--title-${size})`,
