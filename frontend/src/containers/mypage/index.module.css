@@ -14,13 +14,19 @@
   gap: 10px;
 }
 
-.nicknameForm {
+.nicknameForm,
+.keywordForm {
   background-color: var(--color-lightgray);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   padding: 5px 10px;
 }
 
-.nicknameInput {
+.keywordForm {
+  width: 80%;
+}
+
+.nicknameInput,
+.keywordInput {
   border: none;
   background: none;
   outline: none;
@@ -28,10 +34,10 @@
   height: 100%;
 }
 
-.nicknameInput::placeholder {
+.nicknameInput::placeholder,
+.keyword::placeholder {
   color: var(--color-gray);
   font-size: 12px;
-  padding: 10px;
 }
 
 .modal {
@@ -93,7 +99,7 @@
   border-radius: 5px;
 }
 
-.biasSelect {
+.select {
   display: flex;
   gap: 10px;
 }
@@ -118,7 +124,27 @@
 .image {
   border-radius: 100%;
 }
-.biasButton {
+.biasButton,
+.wishButton {
   width: 30%;
   padding-left: 35%;
+}
+
+.keyword {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.keywordContainer {
+  width: 80%;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.alertText {
+  font-size: small;
+  color: var(--color-primary);
 }

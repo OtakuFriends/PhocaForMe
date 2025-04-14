@@ -3,7 +3,7 @@ import Title from "@/components/Title";
 import styles from "./index.module.css";
 import Single from "@/components/Select/Single";
 import { groupOption } from "@/constants/groupOption";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Option } from "@/types";
 import { memberOption } from "@/constants/memberOption";
 import Image from "next/image";
@@ -12,13 +12,11 @@ import Button from "@/components/Button";
 const Bias = () => {
   const [group, setGroup] = useState<Option | null>(null);
   const [member, setMember] = useState<Option | null>(null);
-  const [memberImg, setMemberImg] = useState<string>("");
+  //   const [memberImg, setMemberImg] = useState<string>("");
 
-  useEffect(() => {
-    setMemberImg(
-      "https://search.pstatic.net/common?type=b&size=3000&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2FprofileImg%2Fadc8f747-a751-437d-a063-915bc27cf424.jpg"
-    );
-  }, []);
+  const memberImg =
+    "https://search.pstatic.net/common?type=b&size=3000&quality=100&direct=true&src=http%3A%2F%2Fsstatic.naver.net%2Fpeople%2FprofileImg%2Fadc8f747-a751-437d-a063-915bc27cf424.jpg";
+
   const handleGroup = (value: Option | null) => {
     setGroup(value);
   };
@@ -40,7 +38,7 @@ const Bias = () => {
             *설정된 최애는 내 프로필 사진이 돼요!
           </div>
         </div>
-        <div className={styles.biasSelect}>
+        <div className={styles.select}>
           <Single
             title="그룹명"
             font="normal"
@@ -62,7 +60,9 @@ const Bias = () => {
               className={styles.image}
               src={memberImg}
               fill
-              objectFit="cover"
+              sizes="30vw"
+              style={{ objectFit: "cover" }}
+              priority
               alt="bias image"
             />
           </div>
