@@ -10,6 +10,8 @@
   --color-lightgray: #f2f2f2;
   --color-mediumgray: #d8d8d8;
   --color-gray: #697077;
+  --color-start: #eecda3;
+  --color-end: #ef629f;
 }
 
 main {

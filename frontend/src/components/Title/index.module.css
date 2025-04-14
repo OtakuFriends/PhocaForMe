@@ -1,0 +1,17 @@
+.titleLarge {
+  font-family: var(--font-BMHANNAPro);
+  font-size: var(--title-large);
+}
+
+.titleMedium {
+  font-family: var(--font-BMHANNAPro);
+  font-size: var(--title-medium);
+}
+
+.titleSmall {
+  font-size: var(--title-small);
+}
+
+.normal {
+  font-family: var(--font-Freesentation);
+}

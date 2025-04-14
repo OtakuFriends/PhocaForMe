@@ -76,3 +76,49 @@
   color: var(--color-primary);
   font-size: small;
 }
+
+.bias,
+.wishcard {
+  background-color: white;
+  border-radius: 3px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gradient {
+  background: linear-gradient(to right, var(--color-start), var(--color-end));
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.biasSelect {
+  display: flex;
+  gap: 10px;
+}
+
+.subtitle {
+  font-size: small;
+  color: var(--color-primary);
+}
+
+.biasImage {
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 80px;
+  aspect-ratio: 1;
+  border: 2px solid var(--color-primary);
+  border-radius: 100%;
+}
+.image {
+  border-radius: 100%;
+}
+.biasButton {
+  width: 30%;
+  padding-left: 35%;
+}
