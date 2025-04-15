@@ -39,7 +39,7 @@ const ChartContent = ({ rankData }: ChartContentProps) => {
         <div className={styles.rank23Idol}>
           {[2, 3].map((rank) => (
             <div key={rank} className={styles.rankItem}>
-              <div>{rank}위</div>
+              <div className={styles.rankText}>{rank}위</div>
               <div className={styles.rank23Image}>
                 <Image
                   className={styles.image}
@@ -50,7 +50,9 @@ const ChartContent = ({ rankData }: ChartContentProps) => {
                   src={rankData[rank - 1]?.idolImage}
                 />
               </div>
-              <div>{rankData[rank - 1]?.idolName}</div>
+              <div className={styles.rankText}>
+                {rankData[rank - 1]?.idolName}
+              </div>
             </div>
           ))}
         </div>

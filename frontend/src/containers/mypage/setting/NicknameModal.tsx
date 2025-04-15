@@ -11,15 +11,16 @@ interface Props {
 
 const NicknameModal = ({ loginUser, handleClose }: Props) => {
   const [nickname, setNickname] = useState<string>(loginUser);
-  const [state, setState] = useState<boolean>(false);
+  const [state, setState] = useState<number>(0); // 0은 체크 전 1은 가능 -1은 중복
   const handleNickname = (event: React.ChangeEvent<HTMLInputElement>) => {
     setNickname(event.target.value);
+    setState(0);
   };
 
   const handleCheck = () => {
     // to do
     // 중복 체크
-    setState(true);
+    setState(1);
   };
 
   return (
@@ -39,9 +40,9 @@ const NicknameModal = ({ loginUser, handleClose }: Props) => {
             ></input>
           </div>
           <div className={styles.isValid}>
-            {loginUser == nickname && !state ? (
+            {state === 0 ? (
               <div />
-            ) : state ? (
+            ) : state === 1 ? (
               <div className={styles.isValidText}>
                 사용 가능한 닉네임입니다.
               </div>
@@ -50,15 +51,16 @@ const NicknameModal = ({ loginUser, handleClose }: Props) => {
             )}
           </div>
         </div>
-        <div className={styles.button}>
-          <Button size="small" action={handleCheck} content="중복체크"></Button>
+        <div className={styles.button} onClick={handleCheck}>
+          중복체크
+          {/* <Button size="small" action={handleCheck} content="중복체크"></Button> */}
         </div>
       </div>
 
       <div className={styles.buttonContainer}>
-        <Button size="large" action={handleClose} content="확인" />
+        <Button size="small" action={handleClose} content="확인" />
         <Button
-          size="large"
+          size="small"
           action={handleClose}
           content="취소"
           className="gray"

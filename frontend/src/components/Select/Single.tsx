@@ -21,7 +21,7 @@ const Single = ({ title, font, options, value, error, setValue }: Props) => {
 
   return (
     <div id={styles.single}>
-      <Title size="medium" id={styles.title} font={font}>
+      <Title size="small" id={styles.title} font={font}>
         {title}
       </Title>
       <div className={`styles.selectbox ${error ? styles.errorContainer : ""}`}>
