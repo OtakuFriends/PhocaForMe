@@ -158,7 +158,7 @@ const CardDetail = ({ cardId }: Props) => {
         />
       </Modal>
 
-      <div className={styles.writer}>
+      <div className={styles.member}>
         {`있어요: ${post.ownMembers
           .map((member) => member.label)
           .join(", ")} ✦ 구해요: ${post.targetMembers
