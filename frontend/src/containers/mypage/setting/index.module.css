@@ -4,7 +4,7 @@
   padding: 5% 0;
   row-gap: 15px;
   margin: 10px 30px 30px;
-  border: 1px solid var(--color-gray);
+  border: 2px solid var(--color-mediumgray);
   border-radius: 10px;
 }
 
@@ -57,16 +57,14 @@
 
 .checkInput {
   display: flex;
-  gap: 10px;
+  gap: 20px;
 }
 
 .button {
-  flex: 1;
-  padding-top: 5px;
-}
-
-.inputAndText {
-  flex: 2;
+  margin-top: 5px;
+  width: fit-content;
+  color: var(--color-primary);
+  text-decoration: underline;
 }
 
 .buttonContainer {
@@ -83,7 +81,7 @@
 }
 
 .isValidText {
-  color: var(--color-primary);
+  color: var(--color-gray);
   font-size: small;
 }
 
@@ -159,7 +157,7 @@
   width: calc(100% - 40px);
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--color-gray);
+  border-bottom: 2px solid var(--color-mediumgray);
   padding: 0 20px 10px;
 }
 
