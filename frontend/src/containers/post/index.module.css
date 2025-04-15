@@ -1,7 +1,7 @@
 #container {
   display: flex;
   flex-direction: column;
-  padding: 5% 7%;
+  padding: 8% 7%;
   row-gap: 20px;
 }
 
@@ -52,12 +52,12 @@
 
 #input::placeholder {
   color: var(--color-gray);
-  font-size: small;
+  font-size: 0.9rem;
 }
 
 #textarea::placeholder {
   color: var(--color-gray);
-  font-size: small;
+  font-size: 0.9rem;
 }
 
 /* 버튼 */
@@ -115,7 +115,7 @@
 
 .alertText {
   color: var(--color-primary);
-  font-size: small;
+  font-size: 0.9rem;
 }
 
 /* 빈값 처리 */

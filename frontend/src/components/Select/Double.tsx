@@ -51,7 +51,7 @@ const Double = ({
   return (
     <div id={styles.double}>
       <div className={styles.memberContainer}>
-        <Title size="medium" id={styles.title}>
+        <Title size="small" font="normal" id={styles.title}>
           {title[0]}
         </Title>
         <div className={`${error && error[0] ? styles.errorContainer : ""}`}>
@@ -70,7 +70,7 @@ const Double = ({
         </div>
       </div>
       <div className={styles.memberContainer}>
-        <Title size="medium" id={styles.title}>
+        <Title size="small" font="normal" id={styles.title}>
           {title[1]}
         </Title>
         <div className={`${error && error[1] ? styles.errorContainer : ""}`}>

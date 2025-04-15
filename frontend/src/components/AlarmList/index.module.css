@@ -24,17 +24,17 @@
 .right {
   justify-content: flex-end;
   align-items: center;
-  font-size: small;
+  font-size: 0.9rem;
   column-gap: 5px;
 }
 
 .title {
   font-weight: 600;
-  font-size: large;
+  font-size: 1.1rem;
 }
 
 .subtitle {
-  font-size: small;
+  font-size: 0.9rem;
 }
 
 .close {

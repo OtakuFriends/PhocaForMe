@@ -7,7 +7,7 @@
   border-radius: 20px;
   padding: 2px 5px;
   color: var(--color-primary);
-  font-size: small;
+  font-size: 0.9rem;
 }
 
 .svg {
