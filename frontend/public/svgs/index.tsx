@@ -17,6 +17,7 @@ import Pin from "./pin.svg";
 import Plus from "./plus.svg";
 import Info from "./info.svg";
 import Setting from "./setting.svg";
+import Arrow from "./arrow.svg";
 
 export {
   Hamburger,
@@ -38,4 +39,5 @@ export {
   Plus,
   Info,
   Setting,
+  Arrow,
 };

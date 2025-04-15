@@ -1,9 +1,11 @@
 .container {
   display: flex;
   flex-direction: column;
-  padding: 5% 7%;
-  row-gap: 10px;
-  padding-bottom: 50px;
+  padding: 5% 0;
+  row-gap: 15px;
+  margin: 10px 30px 30px;
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
 }
 
 .nickname {
@@ -49,8 +51,8 @@
   flex-direction: column;
   gap: 10px;
   width: 60vw;
-  height: 30vh;
-  justify-content: center;
+  height: 25vh;
+  justify-content: space-evenly;
 }
 
 .checkInput {
@@ -60,6 +62,7 @@
 
 .button {
   flex: 1;
+  padding-top: 5px;
 }
 
 .inputAndText {
@@ -98,6 +101,7 @@
   background: linear-gradient(to right, var(--color-start), var(--color-end));
   padding: 3px;
   border-radius: 5px;
+  margin: 0 7%;
 }
 
 .select {
@@ -148,4 +152,17 @@
 .alertText {
   font-size: small;
   color: var(--color-primary);
+}
+
+.topContainer {
+  display: flex;
+  width: calc(100% - 40px);
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-gray);
+  padding: 0 20px 10px;
+}
+
+.icon {
+  width: 40px;
 }
