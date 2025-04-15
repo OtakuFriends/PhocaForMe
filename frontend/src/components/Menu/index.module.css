@@ -1,9 +1,10 @@
 .optionContainer {
   width: 90%;
+  height: fit-content;
   display: flex;
   align-items: center;
   column-gap: 10px;
-  background: white;
+  background-color: white;
   border: 1px solid var(--color-mediumgray);
   color: var(--color-gray);
   padding: 5%;
@@ -29,18 +30,29 @@
 
 .optionContent {
   padding: 0 10%;
-  font-size: 1rem;
+  font-size: 0.8rem;
   display: flex;
   column-gap: 10px;
   color: var(--color-gray);
 }
 
 .menu {
+  position: fixed;
+  top: 8vh;
+  margin-left: 5%;
+  z-index: 200;
+  left: 0;
+  background-color: white;
+  border: 1px solid var(--color-mediumgray);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   row-gap: 5px;
-  width: 90%;
+  width: calc(90% - 20px);
   height: fit-content;
+  padding: 10px;
 }
 
 .pink {
