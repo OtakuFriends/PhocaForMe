@@ -51,7 +51,7 @@
 }
 
 .subtitle {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--color-gray);
   width: 100%;
   white-space: nowrap;
@@ -60,6 +60,6 @@
 }
 
 .date {
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-align: end;
 }
