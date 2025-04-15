@@ -15,7 +15,23 @@
 }
 
 main {
-  padding: 8vh 0;
+  padding: 15% 0;
+}
+
+@media screen and (min-width: 768px) {
+  .app-wrapper {
+    width: 414px;
+    aspect-ratio: 9 / 16;
+    overflow-y: auto;
+    background-color: white;
+  }
+
+  body {
+    background-color: var(--color-lightgray);
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /* 확대방지 */
