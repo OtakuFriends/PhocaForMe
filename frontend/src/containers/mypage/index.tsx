@@ -3,15 +3,20 @@ import Title from "@/components/Title";
 import styles from "./index.module.css";
 import Post from "./Post";
 import { Setting } from "#/svgs";
+import { useRouter } from "next/navigation";
 
 const MyPage = () => {
-  // const loginUser = "아궁빵";
+  const router = useRouter();
+  const goToSetting = () => {
+    router.push("/mypage/setting");
+  };
+
   return (
     <div className={styles.container}>
       <div>
         <div className={styles.topContainer}>
           <Title size="large">마이페이지</Title>
-          <div className={styles.settingSvg}>
+          <div className={styles.settingSvg} onClick={goToSetting}>
             <Setting />
           </div>
         </div>
@@ -22,9 +27,6 @@ const MyPage = () => {
           </div>
         </div>
       </div>
-      {/* <Nickname loginUser={loginUser} />
-      <Bias />
-      <WishCard /> */}
       <Post type="recent" />
       <Post type="mypost" />
     </div>
