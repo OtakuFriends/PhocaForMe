@@ -78,12 +78,13 @@ const ChatMessage = ({ roomId, loginUser }: Props) => {
 
   useEffect(() => {
     if (sendMessageBoxRef.current) {
-      window.scrollTo({ top: sendMessageBoxRef.current.scrollHeight });
+      const box = sendMessageBoxRef.current;
+      box.scrollTop = box.scrollHeight;
     }
   }, [chatting]);
 
   return (
-    <div className={styles.message}>
+    <div className={styles.message} ref={sendMessageBoxRef}>
       <div className={styles.noticeBox}>
         <Pin className={styles.noticeIcon} /> 거래가 처음이신가요?{" "}
         <a href="/help" className={styles.help}>

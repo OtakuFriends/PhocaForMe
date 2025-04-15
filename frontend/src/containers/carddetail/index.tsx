@@ -26,6 +26,19 @@ const CardDetail = ({ cardId }: Props) => {
   const [imageSrc, setImageSrc] = useState<string>("");
 
   useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    // 컴포넌트 unmount 될 때도 복구
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
     setPost({
       title: "원영이 포카 데려가세요 너무 예뻐요 진짜 초미녀임",
       content:
