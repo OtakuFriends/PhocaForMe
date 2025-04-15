@@ -19,7 +19,9 @@ const Setting = () => {
         <div className={styles.icon} onClick={goToMypage}>
           <Arrow />
         </div>
-        <Title size="large">설정</Title>
+        <Title size="large" font="normal">
+          설정
+        </Title>
         <div className={styles.icon}></div>
       </div>
       <Nickname loginUser={loginUser} />

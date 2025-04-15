@@ -21,7 +21,7 @@
 
 #searchInput::placeholder {
   color: var(--color-gray);
-  font-size: small;
+  font-size: 0.9rem;
 }
 
 #formContainer {
@@ -44,7 +44,7 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 }
 
 .button {

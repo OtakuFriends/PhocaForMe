@@ -1,7 +1,7 @@
 #container {
   display: flex;
   flex-direction: column;
-  padding: 5% 7%;
+  padding: 5% 8%;
   row-gap: 10px;
 }
 
@@ -19,5 +19,5 @@
   align-items: center;
   justify-content: flex-end;
   column-gap: 5px;
-  font-size: small;
+  font-size: 0.9rem;
 }

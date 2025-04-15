@@ -1,8 +1,8 @@
 .card {
   display: flex;
   flex-direction: column;
-  width: 86vw;
-  padding-left: 7vw;
+  width: 86%;
+  padding-left: 7%;
   row-gap: 10px;
 }
 
@@ -38,7 +38,7 @@
 .overlayText {
   color: var(--color-primary);
   font-family: var(--font-DOSSaemmul);
-  font-size: x-large;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -47,7 +47,7 @@
   border-radius: 10px;
   background-color: var(--color-mediumgray);
   font-weight: 600;
-  font-size: medium;
+  font-size: 1rem;
   border: 1px solid black;
   width: fit-content;
   color: black;
@@ -62,9 +62,9 @@
 .content {
   width: calc(100% - 20px);
   overflow-wrap: anywhere;
-  font-size: large;
+  font-size: 1.1rem;
   padding: 10px;
-  margin-bottom: 10vh;
+  margin-bottom: 12vh;
 }
 
 .postBottom {
@@ -73,11 +73,11 @@
 }
 
 .buttonContainer {
-  width: 90%;
+  width: calc(100% - 60px);
   display: flex;
   justify-content: center;
   position: fixed;
-  bottom: 12vh;
+  bottom: 13vh;
 }
 
 .subtitle {
@@ -87,12 +87,7 @@
 }
 
 .writer {
-  font-size: small;
-}
-
-.member {
-  color: var(--color-gray);
-  /* font-size: small; */
+  font-size: 0.9rem;
 }
 
 .cardType {
@@ -101,7 +96,7 @@
   padding: 2px 5px;
   border-radius: 10px;
   color: white;
-  font-size: small;
+  font-size: 0.9rem;
 }
 
 .circular {
@@ -124,7 +119,7 @@
   border-radius: 30px;
   background-color: var(--color-mediumgray);
   font-weight: 600;
-  font-size: small;
+  font-size: 0.9rem;
   border: 1px solid black;
   width: fit-content;
 }
@@ -135,7 +130,7 @@
 }
 
 .title {
-  font-size: larger;
+  font-size: 1.3rem;
   margin-right: 10px;
 }
 

@@ -33,7 +33,7 @@
 
 .text {
   font-weight: 300;
-  font-size: small;
+  font-size: 0.9rem;
   color: var(--color-gray);
 }
 
@@ -52,7 +52,7 @@
   height: 100%;
   position: absolute;
   color: var(--color-primary);
-  font-size: larger;
+  font-size: 1.3rem;
   font-weight: 800;
 }
 
