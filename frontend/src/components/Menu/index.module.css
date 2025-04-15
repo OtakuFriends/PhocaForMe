@@ -29,7 +29,7 @@
 
 .optionContent {
   padding: 0 10%;
-  font-size: 0.9rem;
+  font-size: 1rem;
   display: flex;
   column-gap: 10px;
   color: var(--color-gray);
