@@ -21,7 +21,7 @@
 
 #searchInput::placeholder {
   color: var(--color-gray);
-  font-size: 12px;
+  font-size: small;
 }
 
 #formContainer {

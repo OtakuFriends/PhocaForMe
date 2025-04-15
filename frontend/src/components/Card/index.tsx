@@ -42,8 +42,8 @@ const Card = ({ boardId, title, imageSrc, findId, ownId, bartered }: Card) => {
           src={imageSrc}
         ></Image>
       </div>
-      <div id={styles.contentContainer}>
-        <Title size="small" id={styles.titleContainer}>
+      <div className={styles.contentContainer}>
+        <Title id={styles.ellipsis} size="small">
           {title}
         </Title>
         <div id={styles.hr} />

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import ToggleButton from "../Toggle";
 import styles from "./index.module.css";
+import { getAddressFromCoords } from "@/api/geolocation";
 
 interface Props {
   icon: React.ReactNode;
@@ -13,12 +14,24 @@ interface Props {
 }
 
 const MenuOption = ({ icon, content, action, className, gps }: Props) => {
-  const [isOn, setIsOn] = useState(false);
+  const [isOn, setIsOn] = useState<boolean>(false);
+  const [location, setLocation] = useState<string>("");
+
+  const fetchData = async (latitude: number, longitude: number) => {
+    const addr = await getAddressFromCoords(latitude, longitude);
+    setLocation(addr);
+  };
 
   const handleToggle = (
     event: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>
   ) => {
     event.preventDefault();
+    if (!isOn) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        fetchData(position.coords.longitude, position.coords.latitude);
+        // setLocation(`${position.coords.longitude} ${position.coords.latitude}`);
+      });
+    }
     setIsOn((prev) => !prev);
   };
 
@@ -31,7 +44,7 @@ const MenuOption = ({ icon, content, action, className, gps }: Props) => {
         </div>
         <div className={styles.optionContent}>
           <ToggleButton isOn={isOn} onToggle={handleToggle} />
-          {isOn && <div>*현위치: 강남구 역삼동</div>}
+          {isOn && <div>*현위치: {location}</div>}
         </div>
       </div>
     );

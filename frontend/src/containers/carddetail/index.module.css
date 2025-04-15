@@ -83,11 +83,16 @@
 .subtitle {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .writer {
+  font-size: small;
+}
+
+.member {
   color: var(--color-gray);
-  font-size: 15px;
+  /* font-size: small; */
 }
 
 .cardType {
@@ -130,7 +135,7 @@
 }
 
 .title {
-  font-size: 22px;
+  font-size: larger;
   margin-right: 10px;
 }
 

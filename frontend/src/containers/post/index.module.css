@@ -52,12 +52,12 @@
 
 #input::placeholder {
   color: var(--color-gray);
-  font-size: 12px;
+  font-size: small;
 }
 
 #textarea::placeholder {
   color: var(--color-gray);
-  font-size: 12px;
+  font-size: small;
 }
 
 /* 버튼 */
