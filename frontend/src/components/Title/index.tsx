@@ -6,12 +6,13 @@ interface Props {
   children: React.ReactNode;
   id?: string;
   font?: string;
+  underline?: boolean;
 }
 
-export default function Title({ size, children, id, font }: Props) {
+export default function Title({ size, children, id, font, underline }: Props) {
   return (
     <div
-      className={`${
+      className={`${styles.container} ${
         size === "large"
           ? styles.titleLarge
           : size === "medium"
@@ -21,6 +22,7 @@ export default function Title({ size, children, id, font }: Props) {
       {...(id ? { id } : {})}
     >
       {children}
+      {underline ? <div className={styles.underline} /> : null}
     </div>
   );
 }

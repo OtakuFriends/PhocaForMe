@@ -16,6 +16,7 @@ import Close from "./close.svg";
 import Pin from "./pin.svg";
 import Plus from "./plus.svg";
 import Info from "./info.svg";
+import Setting from "./setting.svg";
 
 export {
   Hamburger,
@@ -36,4 +37,5 @@ export {
   Pin,
   Plus,
   Info,
+  Setting,
 };
