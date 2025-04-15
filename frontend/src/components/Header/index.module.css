@@ -1,6 +1,8 @@
 #navContainer {
   background-color: white;
-  height: 8vh;
+  height: 10%;
+  max-height: 80px;
+  min-height: 50px;
   width: calc(90% - 2px);
   display: flex;
   justify-content: space-between;
@@ -9,6 +11,13 @@
   position: fixed;
   top: 0;
   z-index: 100;
+}
+
+@media screen and (min-width: 768px) {
+  #navContainer {
+    max-width: 414px;
+    box-sizing: border-box;
+  }
 }
 
 #logo {

@@ -12,6 +12,13 @@
   gap: 10px 0px;
 }
 
+@media screen and (min-width: 414px) {
+  #cardContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 #cardListContainer {
   display: flex;
   flex-direction: column;

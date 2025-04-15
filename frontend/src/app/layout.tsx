@@ -34,10 +34,12 @@ export default function RootLayout({
       </head>
       <body>
         <ServiceWorkerRegister />
-        <Header />
-        <main>{children}</main>
-        <Floating />
-        <Ad />
+        <div className="app-wrapper">
+          <Header />
+          <main>{children}</main>
+          <Ad />
+          <Floating />
+        </div>
       </body>
     </html>
   );
